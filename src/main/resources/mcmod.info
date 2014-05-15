@@ -3,8 +3,8 @@
   "modid": "Solstice",
   "name": "Solstice",
   "description": "An environmental immersion mod that adds seasons to Minecraft!",
-  "version": "1.0",
-  "url": "${version}",
+  "version": "${version}",
+  "url": "",
   "updateUrl": "",
   "authorList": [
     "Pahimar",
