@@ -12,8 +12,6 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-import java.io.File;
-
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME)
 public class Solstice
 {
@@ -26,15 +24,12 @@ public class Solstice
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        ConfigurationHandler.init(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + Reference.MOD_ID);
+        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 
-        // Initialize the items
         ModItems.init();
 
-        // Initialize the blocks
         ModBlocks.init();
 
-        // Initialize the packet handler
         PacketHandler.init();
     }
 
