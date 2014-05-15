@@ -1,11 +1,13 @@
 package com.teampapayamar.solstice;
 
 import com.teampapayamar.solstice.configuration.ConfigurationHandler;
+import com.teampapayamar.solstice.configuration.Settings;
 import com.teampapayamar.solstice.init.ModBlocks;
 import com.teampapayamar.solstice.init.ModItems;
 import com.teampapayamar.solstice.network.PacketHandler;
 import com.teampapayamar.solstice.proxy.IProxy;
 import com.teampapayamar.solstice.reference.Reference;
+import com.teampapayamar.solstice.util.LogHelper;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -25,6 +27,10 @@ public class Solstice
     public void preInit(FMLPreInitializationEvent event)
     {
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+
+        LogHelper.info(Settings.daysInWeek);
+        LogHelper.info(Settings.weeksInMonth);
+        LogHelper.info(Settings.monthsInSeason);
 
         ModItems.init();
 
