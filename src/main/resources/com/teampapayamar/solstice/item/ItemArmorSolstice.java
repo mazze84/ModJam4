@@ -18,26 +18,29 @@ public class ItemArmorSolstice extends ItemArmor implements ISpecialArmor
     }
 
     @Override
-    public String getUnlocalizedName()
+    public String getUnlocalizedName(ItemStack itemStack)
     {
-        if (this.armorType == 0)
+        if (itemStack.getItem() instanceof ItemArmorSolstice)
         {
-            return String.format("item.%s.%s", Reference.MOD_ID.toLowerCase(), "woolLinedIronHelmet");
-        }
-        else if (this.armorType == 1)
-        {
-            return String.format("item.%s.%s", Reference.MOD_ID.toLowerCase(), "woolLinedIronChestPlate");
-        }
-        else if (this.armorType == 2)
-        {
-            return String.format("item.%s.%s", Reference.MOD_ID.toLowerCase(), "woolLinedIronLeggings");
-        }
-        else if (this.armorType == 3)
-        {
-            return String.format("item.%s.%s", Reference.MOD_ID.toLowerCase(), "woolLinedIronBoots");
+            if (((ItemArmorSolstice) itemStack.getItem()).armorType == 0)
+            {
+                return String.format("item.%s:%s", Reference.MOD_ID.toLowerCase(), "woolLinedIronHelmet");
+            }
+            else if (((ItemArmorSolstice) itemStack.getItem()).armorType == 1)
+            {
+                return String.format("item.%s:%s", Reference.MOD_ID.toLowerCase(), "woolLinedIronChestPlate");
+            }
+            else if (((ItemArmorSolstice) itemStack.getItem()).armorType == 2)
+            {
+                return String.format("item.%s:%s", Reference.MOD_ID.toLowerCase(), "woolLinedIronLeggings");
+            }
+            else if (((ItemArmorSolstice) itemStack.getItem()).armorType == 3)
+            {
+                return String.format("item.%s:%s", Reference.MOD_ID.toLowerCase(), "woolLinedIronBoots");
+            }
         }
 
-        return "blargh";
+        return "";
     }
 
     @Override
