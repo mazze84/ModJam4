@@ -1,0 +1,21 @@
+[
+{
+  "modid": "Solstice",
+  "name": "Solstice",
+  "description": "An environmental immersion mod that adds seasons to Minecraft!",
+  "version": "1.0",
+  "url": "${version}",
+  "updateUrl": "",
+  "authorList": [
+    "Pahimar",
+    "BigBadChris"
+  ],
+  "credits": "Pahimar & BigBadChris",
+  "logoFile": "/assets/solstice/textures/logo/logo.png",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
