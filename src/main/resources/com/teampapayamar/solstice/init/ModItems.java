@@ -1,6 +1,5 @@
 package com.teampapayamar.solstice.init;
 
-import com.teampapayamar.solstice.creativetab.CreativeTabSolstice;
 import com.teampapayamar.solstice.item.ItemArmorSolstice;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemArmor;
@@ -15,6 +14,9 @@ public class ModItems
 
     public static void init()
     {
-
+        GameRegistry.registerItem(woolLinedIronHelmet, "item.woolLinedIronHelmet");
+        GameRegistry.registerItem(woolLinedIronChestPlate, "item.woolLinedIronChestPlate");
+        GameRegistry.registerItem(woolLinedIronLeggings, "item.woolLinedIronLeggings");
+        GameRegistry.registerItem(woolLinedIronBoots, "item.woolLinedIronBoots");
     }
 }
