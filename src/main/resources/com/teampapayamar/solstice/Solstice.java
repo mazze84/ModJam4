@@ -28,10 +28,6 @@ public class Solstice
     {
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 
-        LogHelper.info(Settings.daysInWeek);
-        LogHelper.info(Settings.weeksInMonth);
-        LogHelper.info(Settings.monthsInSeason);
-
         ModItems.init();
 
         ModBlocks.init();
