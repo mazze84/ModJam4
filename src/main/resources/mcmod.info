@@ -4,8 +4,8 @@
   "name": "Solstice",
   "description": "An environmental immersion mod that adds seasons to Minecraft!",
   "version": "1.0",
-  "url": "",
-  "updateUrl": "",
+  "url": "https://github.com/TeamPapayamar/ModJam4",
+  "updateUrl": "http://modjam.pahimar.com",
   "authorList": [
     "Pahimar",
     "BigBadChris"
