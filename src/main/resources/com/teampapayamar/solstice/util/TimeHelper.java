@@ -8,26 +8,28 @@ public class TimeHelper
      * 2,016,000 ticks in a MC season - 8,064,000 ticks in a MC year
      */
 
+    public static final long TICKS_IN_DAY = 24000L;
+    public static final long TICKS_IN_WEEK = TICKS_IN_DAY * 7;
+    public static final long TICKS_IN_MONTH = TICKS_IN_WEEK * 4;
+    public static final long TICKS_IN_SEASON = TICKS_IN_MONTH * 3;
+    public static final long TICKS_IN_YEAR = TICKS_IN_SEASON * 4;
+
+
     public static String convertTicksToTimeString(long worldTime)
     {
-        long tempTime = worldTime + 2016000L;
-        long year = tempTime / 8064000L;
+        // Offset world time by one season, to accommodate that we start players on the first day of Spring
+        long adjustedWorldTime = worldTime + TICKS_IN_SEASON;
 
-        tempTime = tempTime % 8064000L;
-        long season = tempTime / 2016000L;
+        long year = adjustedWorldTime / TICKS_IN_YEAR;
+        long season = (adjustedWorldTime % TICKS_IN_YEAR) / TICKS_IN_SEASON;
+        long month = (adjustedWorldTime % TICKS_IN_YEAR) / TICKS_IN_MONTH;
+        long week_of_year = (adjustedWorldTime % TICKS_IN_YEAR) / TICKS_IN_WEEK;
+        long week_of_month = (adjustedWorldTime % TICKS_IN_YEAR) / (month * 4 * TICKS_IN_WEEK);
+        long day_of_year = (adjustedWorldTime % TICKS_IN_YEAR) / TICKS_IN_DAY;
+        long day_of_month =
 
-        tempTime = tempTime % 2016000L;
-        long month = tempTime / 672000L;
+        long timeOfDay = adjustedWorldTime;
 
-        tempTime = tempTime % 672000L;
-        long week = tempTime / 168000L;
-
-        tempTime = tempTime % 168000L;
-        long day = tempTime / 24000;
-
-        tempTime = tempTime % 24000;
-        long timeOfDay = tempTime;
-
-        return String.format("Year: %s, Season: %s, Month: %s, Week: %s, Day: %s, Time of Day: %s", year, season, month, week, day, timeOfDay);
+        return String.format("Year: %s, Season: %s, Month: %s, Week of Year: %s, Week of Month: %s, Day of Year: %s, Time of Day: %s", year, season, month, week_of_year, week_of_month, day_of_year, timeOfDay);
     }
 }

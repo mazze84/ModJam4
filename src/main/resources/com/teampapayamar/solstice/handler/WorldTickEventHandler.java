@@ -10,6 +10,9 @@ public class WorldTickEventHandler
     @SubscribeEvent
     public void onWorldTickEvent(TickEvent.WorldTickEvent event)
     {
-        LogHelper.info(TimeHelper.convertTicksToTimeString(event.world.getWorldTime()));
+        if (event.world.getWorldTime() % 20 == 0)
+        {
+            LogHelper.info(TimeHelper.convertTicksToTimeString(event.world.getWorldTime()));
+        }
     }
 }

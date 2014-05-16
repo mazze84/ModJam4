@@ -12,6 +12,6 @@ public class RenderTickEventHandler
     @SubscribeEvent
     public void onRenderTickEvent(TickEvent.RenderTickEvent event)
     {
-        LogHelper.info("Client " + event.renderTickTime);
+
     }
 }
