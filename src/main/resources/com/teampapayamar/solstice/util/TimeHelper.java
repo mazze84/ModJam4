@@ -1,5 +1,7 @@
 package com.teampapayamar.solstice.util;
 
+import com.teampapayamar.solstice.reference.Time;
+
 public class TimeHelper
 {
     /**
@@ -30,7 +32,8 @@ public class TimeHelper
 //        long hours = (((adjustedWorldTime % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY) / TICKS_IN_HOUR) + 6) % 24;
 //        long minutes = (adjustedWorldTime % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY % TICKS_IN_HOUR) / TICKS_IN_MINUTE;
 
-        return String.format("Year: %s, Season: %s, Month: %s, Day of Month, %s, Day of Week: %s, %02d:%02d", getYear(worldTime), getSeason(worldTime), getMonth(worldTime), getDayOfMonth(worldTime), getDayOfWeek(worldTime), getHour(worldTime), getMinutes(worldTime));
+//        return String.format("Year: %s, Season: %s, Month: %s, Day of Month, %s, Day of Week: %s, %02d:%02d %s", getYear(worldTime), getSeason(worldTime), getMonth(worldTime), getDayOfMonth(worldTime), getDayOfWeek(worldTime), getHour(worldTime, false), getMinutes(worldTime), getAMPM(worldTime));
+        return String.format("%s %s %s, %s AC %02d:%02d %s", Time.DAY_OF_WEEK[(int) getDayOfWeek(worldTime)], Time.MONTHS[(int) getMonth(worldTime)], getDayOfMonth(worldTime) + 1, getYear(worldTime), getHour(worldTime, false), getMinutes(worldTime), getAMPM(worldTime));
     }
 
     public static long getYear(long worldTime)
@@ -58,13 +61,36 @@ public class TimeHelper
         return ((worldTime + TICKS_IN_SEASON) % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK) / TICKS_IN_DAY;
     }
 
-    public static long getHour(long worldTime)
+    public static long getHour(long worldTime, boolean is24HourTime)
     {
-        return ((((worldTime + TICKS_IN_SEASON) % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY) / TICKS_IN_HOUR) + 6) % 24;
+        if (is24HourTime)
+        {
+            return ((((worldTime + TICKS_IN_SEASON) % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY) / TICKS_IN_HOUR) + 6) % 24;
+        }
+        else
+        {
+            return ((((worldTime + TICKS_IN_SEASON) % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY) / TICKS_IN_HOUR) + 6) % 12;
+        }
     }
 
     public static long getMinutes(long worldTime)
     {
         return ((worldTime + TICKS_IN_SEASON) % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY % TICKS_IN_HOUR) / TICKS_IN_MINUTE;
+    }
+
+    public static String getAMPM(long worldTime)
+    {
+        if (getHour(worldTime, true) >= 12)
+        {
+            return "PM";
+        }
+        else if (getHour(worldTime, true) < 12)
+        {
+            return "AM";
+        }
+        else
+        {
+            return "";
+        }
     }
 }
