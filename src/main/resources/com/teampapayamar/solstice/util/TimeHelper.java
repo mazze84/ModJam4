@@ -18,20 +18,53 @@ public class TimeHelper
     public static String convertTicksToTimeString(long worldTime)
     {
         // Offset world time by one season, to accommodate that we start players on the first day of Spring
-        long adjustedWorldTime = worldTime + TICKS_IN_SEASON;
+//        long adjustedWorldTime = worldTime + TICKS_IN_SEASON;
+//        long year = adjustedWorldTime / TICKS_IN_YEAR;
+//        long season = (adjustedWorldTime % TICKS_IN_YEAR) / TICKS_IN_SEASON;
+//        long month = (adjustedWorldTime % TICKS_IN_YEAR) / TICKS_IN_MONTH;
+//        long week_of_year = (adjustedWorldTime % TICKS_IN_YEAR) / TICKS_IN_WEEK;
+//        long week_of_month = (adjustedWorldTime % TICKS_IN_YEAR % TICKS_IN_MONTH) / TICKS_IN_WEEK;
+//        long day_of_year = (adjustedWorldTime % TICKS_IN_YEAR) / TICKS_IN_DAY;
+//        long day_of_month = (adjustedWorldTime % TICKS_IN_YEAR % TICKS_IN_MONTH) / TICKS_IN_DAY;
+//        long day_of_week = (adjustedWorldTime % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK) / TICKS_IN_DAY;
+//        long hours = (((adjustedWorldTime % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY) / TICKS_IN_HOUR) + 6) % 24;
+//        long minutes = (adjustedWorldTime % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY % TICKS_IN_HOUR) / TICKS_IN_MINUTE;
 
-        long year = adjustedWorldTime / TICKS_IN_YEAR;
-        long season = (adjustedWorldTime % TICKS_IN_YEAR) / TICKS_IN_SEASON;
-        long month = (adjustedWorldTime % TICKS_IN_YEAR) / TICKS_IN_MONTH;
-        long week_of_year = (adjustedWorldTime % TICKS_IN_YEAR) / TICKS_IN_WEEK;
-        long week_of_month = (adjustedWorldTime % TICKS_IN_YEAR % TICKS_IN_MONTH) / TICKS_IN_WEEK;
-        long day_of_year = (adjustedWorldTime % TICKS_IN_YEAR) / TICKS_IN_DAY;
-        long day_of_month = (adjustedWorldTime % TICKS_IN_YEAR % TICKS_IN_MONTH) / TICKS_IN_DAY;
-        long day_of_week = (adjustedWorldTime % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK) / TICKS_IN_DAY;
+        return String.format("Year: %s, Season: %s, Month: %s, Day of Month, %s, Day of Week: %s, %02d:%02d", getYear(worldTime), getSeason(worldTime), getMonth(worldTime), getDayOfMonth(worldTime), getDayOfWeek(worldTime), getHour(worldTime), getMinutes(worldTime));
+    }
 
-        long hours = (((adjustedWorldTime % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY) / TICKS_IN_HOUR) + 6) % 24;
-        long minutes = (adjustedWorldTime % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY % TICKS_IN_HOUR) / TICKS_IN_MINUTE;
+    public static long getYear(long worldTime)
+    {
+        return (worldTime + TICKS_IN_SEASON) / TICKS_IN_YEAR;
+    }
 
-        return String.format("Year: %s, Season: %s, Month: %s, Week of Year: %s, Week of Month: %s, Day of Year: %s, Day of Month, %s, Day of Week: %s, Hour: %s, Minutes: %s", year, season, month, week_of_year, week_of_month, day_of_year, day_of_month, day_of_week, hours, minutes);
+    public static long getSeason(long worldTime)
+    {
+        return ((worldTime + TICKS_IN_SEASON) % TICKS_IN_YEAR) / TICKS_IN_SEASON;
+    }
+
+    public static long getMonth(long worldTime)
+    {
+        return ((worldTime + TICKS_IN_SEASON) % TICKS_IN_YEAR) / TICKS_IN_MONTH;
+    }
+
+    public static long getDayOfMonth(long worldTime)
+    {
+        return ((worldTime + TICKS_IN_SEASON) % TICKS_IN_YEAR % TICKS_IN_MONTH) / TICKS_IN_DAY;
+    }
+
+    public static long getDayOfWeek(long worldTime)
+    {
+        return ((worldTime + TICKS_IN_SEASON) % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK) / TICKS_IN_DAY;
+    }
+
+    public static long getHour(long worldTime)
+    {
+        return ((((worldTime + TICKS_IN_SEASON) % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY) / TICKS_IN_HOUR) + 6) % 24;
+    }
+
+    public static long getMinutes(long worldTime)
+    {
+        return ((worldTime + TICKS_IN_SEASON) % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY % TICKS_IN_HOUR) / TICKS_IN_MINUTE;
     }
 }
