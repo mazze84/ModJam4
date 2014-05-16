@@ -9,13 +9,13 @@ public class TimeHelper
      * MC week == 140 minutes game time == 2 hours 20 minutes - 672,000 ticks in a MC month == 9 hours 20 minutes -
      * 2,016,000 ticks in a MC season - 8,064,000 ticks in a MC year
      */
-    public static final long TICKS_IN_MINUTE = 17L;
-    public static final long TICKS_IN_HOUR = 1000L;
-    public static final long TICKS_IN_DAY = TICKS_IN_HOUR * 24;
-    public static final long TICKS_IN_WEEK = TICKS_IN_DAY * 7;
-    public static final long TICKS_IN_MONTH = TICKS_IN_WEEK * 4;
-    public static final long TICKS_IN_SEASON = TICKS_IN_MONTH * 3;
-    public static final long TICKS_IN_YEAR = TICKS_IN_SEASON * 4;
+    public static final int TICKS_IN_MINUTE = 17;
+    public static final int TICKS_IN_HOUR = 1000;
+    public static final int TICKS_IN_DAY = TICKS_IN_HOUR * 24;
+    public static final int TICKS_IN_WEEK = TICKS_IN_DAY * 7;
+    public static final int TICKS_IN_MONTH = TICKS_IN_WEEK * 4;
+    public static final int TICKS_IN_SEASON = TICKS_IN_MONTH * 3;
+    public static final int TICKS_IN_YEAR = TICKS_IN_SEASON * 4;
 
     public static String convertTicksToTimeString(long worldTime)
     {
@@ -33,49 +33,78 @@ public class TimeHelper
 //        long minutes = (adjustedWorldTime % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY % TICKS_IN_HOUR) / TICKS_IN_MINUTE;
 
 //        return String.format("Year: %s, Season: %s, Month: %s, Day of Month, %s, Day of Week: %s, %02d:%02d %s", getYear(worldTime), getSeason(worldTime), getMonth(worldTime), getDayOfMonth(worldTime), getDayOfWeek(worldTime), getHour(worldTime, false), getMinutes(worldTime), getAMPM(worldTime));
-        return String.format("%s %s %s, %s AC %02d:%02d %s", Time.DAY_OF_WEEK[(int) getDayOfWeek(worldTime)], Time.MONTHS[(int) getMonth(worldTime)], getDayOfMonth(worldTime) + 1, getYear(worldTime), getHour(worldTime, false), getMinutes(worldTime), getAMPM(worldTime));
+        return String.format("%s %s %s, %s AC %02d:%02d %s [%s]", Time.DAY_OF_WEEK[getDayOfWeek(worldTime)], Time.MONTHS[getMonth(worldTime)], getDayOfMonth(worldTime) + 1, getYear(worldTime), getHour(worldTime, false), getMinutes(worldTime), getAMPM(worldTime), Time.SEASONS[getSeason(worldTime)]);
     }
 
-    public static long getYear(long worldTime)
+    public static int getYear(long worldTime)
     {
-        return (worldTime + TICKS_IN_SEASON) / TICKS_IN_YEAR;
+        return ((((int) worldTime) + 2 * TICKS_IN_MONTH) / TICKS_IN_YEAR);
     }
 
-    public static long getSeason(long worldTime)
+    /**
+     *  Seasons go:
+     *      Months 11, 0, 1 == Winter (December, January, February)
+     *      Months 2, 3, 4 == Spring (March, April, May)
+     *      Months 5, 6, 7 == Summer (June, July, August)
+     *      Months 8, 9, 10 == Fall/Autumn (September, October, November)
+     *
+     * @param worldTime
+     * @return
+     */
+    public static int getSeason(long worldTime)
     {
-        return ((worldTime + TICKS_IN_SEASON) % TICKS_IN_YEAR) / TICKS_IN_SEASON;
+        int month = getMonth(worldTime);
+
+        if (month == 11 || month == 0 || month == 1)
+        {
+            return 0;
+        }
+        else if (month == 2 || month == 3 || month == 4)
+        {
+            return 1;
+        }
+        else if (month == 5 || month == 6 || month == 7)
+        {
+            return 2;
+        }
+        else if (month == 8 || month == 9 || month == 10)
+        {
+            return 3;
+        }
+
+        return 0;
     }
 
-    public static long getMonth(long worldTime)
+    public static int getMonth(long worldTime)
     {
-        return ((worldTime + TICKS_IN_SEASON) % TICKS_IN_YEAR) / TICKS_IN_MONTH;
+        return (((((int) worldTime) + 2 * TICKS_IN_MONTH) % TICKS_IN_YEAR)) / TICKS_IN_MONTH;
     }
 
-    public static long getDayOfMonth(long worldTime)
+    public static int getDayOfMonth(long worldTime)
     {
-        return ((worldTime + TICKS_IN_SEASON) % TICKS_IN_YEAR % TICKS_IN_MONTH) / TICKS_IN_DAY;
+        return ((((int) worldTime) + 2 * TICKS_IN_MONTH) % TICKS_IN_YEAR % TICKS_IN_MONTH) / TICKS_IN_DAY;
     }
 
-    public static long getDayOfWeek(long worldTime)
+    public static int getDayOfWeek(long worldTime)
     {
-        return ((worldTime + TICKS_IN_SEASON) % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK) / TICKS_IN_DAY;
+        return ((((int) worldTime) + 2 * TICKS_IN_MONTH) % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK) / TICKS_IN_DAY;
     }
 
-    public static long getHour(long worldTime, boolean is24HourTime)
+    public static int getHour(long worldTime, boolean is24HourTime)
     {
         if (is24HourTime)
         {
-            return ((((worldTime + TICKS_IN_SEASON) % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY) / TICKS_IN_HOUR) + 6) % 24;
+            return ((((((int) worldTime) + 2 * TICKS_IN_MONTH) % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY) / TICKS_IN_HOUR) + 6) % 24;
         }
         else
         {
-            return ((((worldTime + TICKS_IN_SEASON) % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY) / TICKS_IN_HOUR) + 6) % 12;
+            return ((((((int) worldTime) + 2 * TICKS_IN_MONTH) % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY) / TICKS_IN_HOUR) + 6) % 12;
         }
     }
 
-    public static long getMinutes(long worldTime)
+    public static int getMinutes(long worldTime)
     {
-        return ((worldTime + TICKS_IN_SEASON) % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY % TICKS_IN_HOUR) / TICKS_IN_MINUTE;
+        return ((((int) worldTime) + 2 * TICKS_IN_MONTH) % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY % TICKS_IN_HOUR) / TICKS_IN_MINUTE;
     }
 
     public static String getAMPM(long worldTime)
