@@ -1,5 +1,6 @@
 package com.teampapayamar.solstice.util;
 
+import com.teampapayamar.solstice.configuration.Settings;
 import com.teampapayamar.solstice.reference.Time;
 
 public class TimeHelper
@@ -43,6 +44,7 @@ public class TimeHelper
 
     /**
      *  Seasons go:
+     *      Northern Hemisphere
      *      Months 11, 0, 1 == Winter (December, January, February)
      *      Months 2, 3, 4 == Spring (March, April, May)
      *      Months 5, 6, 7 == Summer (June, July, August)
@@ -55,24 +57,44 @@ public class TimeHelper
     {
         int month = getMonth(worldTime);
 
-        if (month == 11 || month == 0 || month == 1)
+        if (Settings.useNorthernHemisphereForSeasons)
         {
-            return 0;
+            if (month == 11 || month == 0 || month == 1)
+            {
+                return 0;
+            }
+            else if (month == 2 || month == 3 || month == 4)
+            {
+                return 1;
+            }
+            else if (month == 5 || month == 6 || month == 7)
+            {
+                return 2;
+            }
+            else // (month == 8 || month == 9 || month == 10)
+            {
+                return 3;
+            }
         }
-        else if (month == 2 || month == 3 || month == 4)
+        else
         {
-            return 1;
+            if (month == 11 || month == 0 || month == 1)
+            {
+                return 2;
+            }
+            else if (month == 2 || month == 3 || month == 4)
+            {
+                return 3;
+            }
+            else if (month == 5 || month == 6 || month == 7)
+            {
+                return 0;
+            }
+            else // (month == 8 || month == 9 || month == 10)
+            {
+                return 1;
+            }
         }
-        else if (month == 5 || month == 6 || month == 7)
-        {
-            return 2;
-        }
-        else if (month == 8 || month == 9 || month == 10)
-        {
-            return 3;
-        }
-
-        return 0;
     }
 
     public static int getMonth(long worldTime)

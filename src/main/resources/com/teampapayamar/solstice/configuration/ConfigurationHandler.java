@@ -18,9 +18,8 @@ public class ConfigurationHandler
         {
             configuration.load();
 
-            Settings.daysInWeek = configuration.get(CATEGORY_SEASONS, "daysInWeek", Defaults.DAYS_IN_WEEK, "The number of days in a Minecraft week").getInt();
-            Settings.weeksInMonth = configuration.get(CATEGORY_SEASONS, "weeksInMonth", Defaults.WEEKS_IN_MONTH, "The number of weeks in a Minecraft month").getInt();
-            Settings.monthsInSeason = configuration.get(CATEGORY_SEASONS, "monthsInSeason", Defaults.MONTHS_IN_SEASON, "The number of months in a single Minecraft season").getInt();
+            Settings.useNorthernHemisphereForSeasons = configuration.get(CATEGORY_SEASONS, "useNorthernHemisphereForSeasons", Defaults.useNorthernHemisphereForSeasons).getBoolean(Defaults.useNorthernHemisphereForSeasons);
+            Settings.weekStartsOnSunday = configuration.get(CATEGORY_SEASONS, "weekStartsOnSunday", Defaults.weekStartsOnSunday).getBoolean(Defaults.weekStartsOnSunday);
         }
         catch (Exception e)
         {
