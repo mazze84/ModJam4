@@ -5,7 +5,6 @@ import com.teampapayamar.solstice.reference.Textures;
 import com.teampapayamar.solstice.util.ArmorType;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 
@@ -40,24 +39,6 @@ public class ItemArmorWool extends ItemArmorSolstice
     public ArmorProperties getProperties(EntityLivingBase player, ItemStack armor, DamageSource source, double damage, int slot)
     {
         return null;
-    }
-
-    /**
-     * Get the displayed effective armor.
-     *
-     * @param player
-     *         The player wearing the armor.
-     * @param armor
-     *         The ItemStack of the armor item itself.
-     * @param slot
-     *         The armor slot the item is in.
-     *
-     * @return The number of armor points for display, 2 per shield.
-     */
-    @Override
-    public int getArmorDisplay(EntityPlayer player, ItemStack armor, int slot)
-    {
-        return 0;
     }
 
     /**

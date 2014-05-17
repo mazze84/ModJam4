@@ -5,10 +5,8 @@ import com.teampapayamar.solstice.reference.Textures;
 import com.teampapayamar.solstice.util.ArmorType;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraftforge.common.ISpecialArmor;
 
 public class ItemArmorSwimSuit extends ItemArmorSolstice
 {
@@ -21,12 +19,6 @@ public class ItemArmorSwimSuit extends ItemArmorSolstice
     public ArmorProperties getProperties(EntityLivingBase player, ItemStack armor, DamageSource source, double damage, int slot)
     {
         return null;
-    }
-
-    @Override
-    public int getArmorDisplay(EntityPlayer player, ItemStack armor, int slot)
-    {
-        return 0;
     }
 
     @Override

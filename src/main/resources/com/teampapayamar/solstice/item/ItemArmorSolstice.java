@@ -8,6 +8,7 @@ import com.teampapayamar.solstice.util.NameHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -18,11 +19,10 @@ public abstract class ItemArmorSolstice extends ItemArmor implements ISpecialArm
 {
     protected static ArmorMaterial ArmorMaterialSwimSuit = EnumHelper.addArmorMaterial(Names.Armor.SWIM_SUIT_ARMOR, 5, new int[]{1, 1, 1, 1}, 15);
     protected static ArmorMaterial ArmorMaterialWool = EnumHelper.addArmorMaterial(Names.Armor.WOOL_ARMOR, 5, new int[]{1, 1, 1, 1}, 15);
-    protected static ArmorMaterial ArmorMaterialWoolLinedIron = EnumHelper.addArmorMaterial(Names.Armor.WOOL_LINED_IRON_ARMOR, 15, new int[]{2, 5, 4, 1}, 12);
+    protected static ArmorMaterial ArmorMaterialWoolLinedIron = EnumHelper.addArmorMaterial(Names.Armor.WOOL_LINED_IRON_ARMOR, 15, new int[]{2, 6, 5, 2}, 9);
     protected static ArmorMaterial ArmorMaterialWoolLinedGold = EnumHelper.addArmorMaterial(Names.Armor.WOOL_LINED_GOLD_ARMOR, 7, new int[]{2, 5, 3, 1}, 25);
     protected static ArmorMaterial ArmorMaterialWoolLinedDiamond = EnumHelper.addArmorMaterial(Names.Armor.WOOL_LINED_DIAMOND_ARMOR, 33, new int[]{3, 8, 6, 3}, 10);
-
-    protected static ArmorMaterial ArmorMaterialChainIron = EnumHelper.addArmorMaterial(Names.Armor.CHAIN_IRON_ARMOR, 15, new int[]{2, 5, 4, 1}, 12);
+    protected static ArmorMaterial ArmorMaterialChainIron = EnumHelper.addArmorMaterial(Names.Armor.CHAIN_IRON_ARMOR, 15, new int[]{2, 6, 5, 2}, 9);
     protected static ArmorMaterial ArmorMaterialChainGold = EnumHelper.addArmorMaterial(Names.Armor.CHAIN_GOLD_ARMOR, 7, new int[]{2, 5, 3, 1}, 25);
 
     public ItemArmorSolstice(String armorName, ArmorMaterial armorMaterial, ArmorType armorType)
@@ -51,6 +51,24 @@ public abstract class ItemArmorSolstice extends ItemArmor implements ISpecialArm
     {
         super.registerIcons(iconRegister);
         itemIcon = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+    }
+
+    /**
+     * Get the displayed effective armor.
+     *
+     * @param player
+     *         The player wearing the armor.
+     * @param armor
+     *         The ItemStack of the armor item itself.
+     * @param slot
+     *         The armor slot the item is in.
+     *
+     * @return The number of armor points for display, 2 per shield.
+     */
+    @Override
+    public int getArmorDisplay(EntityPlayer player, ItemStack armor, int slot)
+    {
+        return this.getArmorMaterial().getDamageReductionAmount(slot);
     }
 
     protected String getArmorTypeName(Item item)
