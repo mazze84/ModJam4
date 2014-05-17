@@ -1,6 +1,7 @@
 package com.teampapayamar.solstice.item;
 
 import com.teampapayamar.solstice.creativetab.CreativeTabSolstice;
+import com.teampapayamar.solstice.reference.Names;
 import com.teampapayamar.solstice.reference.Textures;
 import com.teampapayamar.solstice.util.ArmorType;
 import com.teampapayamar.solstice.util.NameHelper;
@@ -11,9 +12,18 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.ISpecialArmor;
+import net.minecraftforge.common.util.EnumHelper;
 
 public abstract class ItemArmorSolstice extends ItemArmor implements ISpecialArmor
 {
+    protected static ArmorMaterial ArmorMaterialWool = EnumHelper.addArmorMaterial(Names.Armor.WOOL_ARMOR, 5, new int[]{1, 3, 2, 1}, 15);
+    protected static ArmorMaterial ArmorMaterialWoolLinedIron = EnumHelper.addArmorMaterial(Names.Armor.WOOL_LINED_IRON_ARMOR, 15, new int[]{2, 5, 4, 1}, 12);
+    protected static ArmorMaterial ArmorMaterialWoolLinedGold = EnumHelper.addArmorMaterial(Names.Armor.WOOL_LINED_GOLD_ARMOR, 7, new int[]{2, 5, 3, 1}, 25);
+    protected static ArmorMaterial ArmorMaterialWoolLinedDiamond = EnumHelper.addArmorMaterial(Names.Armor.WOOL_LINED_DIAMOND_ARMOR, 33, new int[]{3, 8, 6, 3}, 10);
+
+    protected static ArmorMaterial ArmorMaterialChainIron = EnumHelper.addArmorMaterial(Names.Armor.CHAIN_IRON_ARMOR, 15, new int[]{2, 5, 4, 1}, 12);
+    protected static ArmorMaterial ArmorMaterialChainGold = EnumHelper.addArmorMaterial(Names.Armor.CHAIN_GOLD_ARMOR, 7, new int[]{2, 5, 3, 1}, 25);
+
     public ItemArmorSolstice(String armorName, ArmorMaterial armorMaterial, ArmorType armorType)
     {
         super(armorMaterial, 1, armorType.ordinal());
