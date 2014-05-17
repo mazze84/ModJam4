@@ -3,6 +3,9 @@ package com.teampapayamar.solstice.item;
 import com.teampapayamar.solstice.reference.Names;
 import com.teampapayamar.solstice.reference.Textures;
 import com.teampapayamar.solstice.util.ArmorType;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -81,6 +84,14 @@ public class ItemArmorWool extends ItemArmorSolstice
     public void damageArmor(EntityLivingBase entity, ItemStack stack, DamageSource source, int damage, int slot)
     {
 
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IIconRegister iconRegister)
+    {
+        super.registerIcons(iconRegister);
+        itemIcon = iconRegister.registerIcon(this.getUnlocalizedName());
     }
 
     /**
