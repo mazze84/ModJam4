@@ -17,9 +17,6 @@ public class ConfigurationHandler
         try
         {
             configuration.load();
-
-            Settings.useNorthernHemisphereForSeasons = configuration.get(CATEGORY_SEASONS, "useNorthernHemisphereForSeasons", Defaults.useNorthernHemisphereForSeasons).getBoolean(Defaults.useNorthernHemisphereForSeasons);
-            Settings.weekStartsOnSunday = configuration.get(CATEGORY_SEASONS, "weekStartsOnSunday", Defaults.weekStartsOnSunday).getBoolean(Defaults.weekStartsOnSunday);
         }
         catch (Exception e)
         {

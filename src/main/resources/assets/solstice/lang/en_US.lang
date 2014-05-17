@@ -18,6 +18,15 @@ month.solstice:ten=Blocktober
 month.solstice:eleven=Blazember
 month.solstice:twelve=Decrafter
 
+# Days
+day.solstice:one=Sunday
+day.solstice:two=Monday
+day.solstice:three=Tuesday
+day.solstice:four=Wednesday
+day.solstice:five=Thursday
+day.solstice:six=Friday
+day.solstice:seven=Saturday
+
 # Item localizations
 item.solstice:woolLinedIronHelmet=Wool Lined Iron Helmet
 item.solstice:woolLinedIronChestPlate=Wool Lined Iron Chestplate
