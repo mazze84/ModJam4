@@ -4,6 +4,9 @@ import com.teampapayamar.solstice.creativetab.CreativeTabSolstice;
 import com.teampapayamar.solstice.reference.Textures;
 import com.teampapayamar.solstice.util.ArmorType;
 import com.teampapayamar.solstice.util.NameHelper;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -13,20 +16,29 @@ public abstract class ItemArmorSolstice extends ItemArmor implements ISpecialArm
 {
     public ItemArmorSolstice(ArmorMaterial armorMaterial, ArmorType armorType)
     {
-        super(armorMaterial, 0, armorType.ordinal());
+        super(armorMaterial, 1, armorType.ordinal());
         this.setCreativeTab(CreativeTabSolstice.SOLSTICE_TAB);
+        this.setTextureName(String.format("%s%s_%s", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName()), getArmorTypeName(this.armorType)));
     }
 
     @Override
     public String getUnlocalizedName()
     {
-        return String.format("item.%s%s_%s", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName()), getArmorTypeName(this));
+        return String.format("item.%s%s_%s", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName()), getArmorTypeName(this.armorType));
     }
 
     @Override
     public String getUnlocalizedName(ItemStack itemStack)
     {
         return String.format("item.%s%s_%s", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName(itemStack)), getArmorTypeName(itemStack.getItem()));
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IIconRegister iconRegister)
+    {
+        super.registerIcons(iconRegister);
+        itemIcon = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
     }
 
     protected String getArmorTypeName(Item item)
@@ -53,5 +65,25 @@ public abstract class ItemArmorSolstice extends ItemArmor implements ISpecialArm
         }
 
         return "";
+    }
+
+    protected String getArmorTypeName(int slot)
+    {
+        if (slot == 0)
+        {
+            return "helm";
+        }
+        else if (slot == 1)
+        {
+            return "chest";
+        }
+        else if (slot == 2)
+        {
+            return "legs";
+        }
+        else// slot == 3
+        {
+            return "boots";
+        }
     }
 }

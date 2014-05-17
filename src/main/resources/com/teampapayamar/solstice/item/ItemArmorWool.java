@@ -16,9 +16,8 @@ public class ItemArmorWool extends ItemArmorSolstice
 {
     public ItemArmorWool(ArmorType armorType)
     {
-        super(ArmorMaterial.CLOTH, armorType);
+        super(ArmorMaterial.IRON, armorType);
         this.setUnlocalizedName(Names.Armor.WOOL_ARMOR);
-        this.setTextureName(Textures.RESOURCE_PREFIX + getArmorTypeName(this));
     }
 
     /**
