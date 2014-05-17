@@ -13,8 +13,7 @@ public class ItemArmorChainGold extends ItemArmorSolstice
 {
     public ItemArmorChainGold(ArmorType armorType)
     {
-        super(Names.Armor.CHAIN_GOLD_ARMOR, ArmorMaterial.CHAIN, armorType);
-        // TODO Add a new ArmorMaterial for this armor
+        super(Names.Armor.CHAIN_GOLD_ARMOR, ArmorMaterialChainGold, armorType);
     }
 
     @Override

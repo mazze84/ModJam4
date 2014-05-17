@@ -16,7 +16,8 @@ import net.minecraftforge.common.util.EnumHelper;
 
 public abstract class ItemArmorSolstice extends ItemArmor implements ISpecialArmor
 {
-    protected static ArmorMaterial ArmorMaterialWool = EnumHelper.addArmorMaterial(Names.Armor.WOOL_ARMOR, 5, new int[]{1, 3, 2, 1}, 15);
+    protected static ArmorMaterial ArmorMaterialSwimSuit = EnumHelper.addArmorMaterial(Names.Armor.SWIM_SUIT_ARMOR, 5, new int[]{1, 1, 1, 1}, 15);
+    protected static ArmorMaterial ArmorMaterialWool = EnumHelper.addArmorMaterial(Names.Armor.WOOL_ARMOR, 5, new int[]{1, 1, 1, 1}, 15);
     protected static ArmorMaterial ArmorMaterialWoolLinedIron = EnumHelper.addArmorMaterial(Names.Armor.WOOL_LINED_IRON_ARMOR, 15, new int[]{2, 5, 4, 1}, 12);
     protected static ArmorMaterial ArmorMaterialWoolLinedGold = EnumHelper.addArmorMaterial(Names.Armor.WOOL_LINED_GOLD_ARMOR, 7, new int[]{2, 5, 3, 1}, 25);
     protected static ArmorMaterial ArmorMaterialWoolLinedDiamond = EnumHelper.addArmorMaterial(Names.Armor.WOOL_LINED_DIAMOND_ARMOR, 33, new int[]{3, 8, 6, 3}, 10);

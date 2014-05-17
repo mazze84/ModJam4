@@ -13,7 +13,7 @@ public class ItemArmorWoolIron extends ItemArmorSolstice
 {
     public ItemArmorWoolIron(ArmorType armorType)
     {
-        super(Names.Armor.WOOL_LINED_IRON_ARMOR, ArmorMaterial.IRON, armorType);
+        super(Names.Armor.WOOL_LINED_IRON_ARMOR, ArmorMaterialWoolLinedIron, armorType);
     }
 
     @Override

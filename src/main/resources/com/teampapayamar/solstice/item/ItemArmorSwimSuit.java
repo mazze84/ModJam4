@@ -14,8 +14,7 @@ public class ItemArmorSwimSuit extends ItemArmorSolstice
 {
     public ItemArmorSwimSuit(ArmorType armorType)
     {
-        super(Names.Armor.SWIM_SUIT_ARMOR, ArmorMaterial.CHAIN, armorType);
-        // TODO Add a new ArmorMaterial for this armor
+        super(Names.Armor.SWIM_SUIT_ARMOR, ArmorMaterialSwimSuit, armorType);
     }
 
     @Override

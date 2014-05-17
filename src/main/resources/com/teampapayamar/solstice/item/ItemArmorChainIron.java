@@ -14,7 +14,6 @@ public class ItemArmorChainIron extends ItemArmorSolstice
     public ItemArmorChainIron(ArmorType armorType)
     {
         super(Names.Armor.CHAIN_IRON_ARMOR, ArmorMaterialChainIron, armorType);
-        // TODO Add a new ArmorMaterial for this armor
     }
 
     @Override

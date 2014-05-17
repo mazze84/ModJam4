@@ -13,7 +13,7 @@ public class ItemArmorWoolGold extends ItemArmorSolstice
 {
     public ItemArmorWoolGold(ArmorType armorType)
     {
-        super(Names.Armor.WOOL_LINED_GOLD_ARMOR, ArmorMaterial.GOLD, armorType);
+        super(Names.Armor.WOOL_LINED_GOLD_ARMOR, ArmorMaterialWoolLinedGold, armorType);
     }
 
     @Override
