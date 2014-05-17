@@ -28,6 +28,11 @@ day.solstice:six=Friday
 day.solstice:seven=Saturday
 
 # Item localizations
+item.solstice:bathingsuit_helm.name=Bathing Suit Cap
+item.solstice:bathingsuit_chest.name=Bathing Suit Top
+item.solstice:bathingsuit_legs.name=Bathing Suit Trunks
+item.solstice:bathingsuit_boots.name=Bathing Suit Shoes
+
 item.solstice:woolarmor_helm.name=Wool Hat
 item.solstice:woolarmor_chest.name=Wool Sweater
 item.solstice:woolarmor_legs.name=Wool Leggings

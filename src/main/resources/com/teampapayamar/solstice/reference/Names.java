@@ -4,6 +4,12 @@ public class Names
 {
     public static class Armor
     {
+        public static final String SWIM_SUIT_ARMOR = "swimsuit";
+        public static final String SWIM_SUIT_ARMOR_HELM = "swimsuit_helm";
+        public static final String SWIM_SUIT_ARMOR_CHEST = "swimsuit_chest";
+        public static final String SWIM_SUIT_ARMOR_LEGS = "swimsuit_legs";
+        public static final String SWIM_SUIT_ARMOR_BOOTS = "swimsuit_boots";
+
         public static final String WOOL_ARMOR = "woolarmor";
         public static final String WOOL_ARMOR_HELM = "woolarmor_helm";
         public static final String WOOL_ARMOR_CHEST = "woolarmor_chest";
