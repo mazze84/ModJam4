@@ -37,6 +37,28 @@ public abstract class ItemArmorSolstice extends ItemArmor implements ISpecialArm
         return String.format("item.%s%s_%s", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName(itemStack)), getArmorTypeName(itemStack.getItem()));
     }
 
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IIconRegister iconRegister)
+    {
+        if (this.armorType == ArmorType.HELMET.ordinal())
+        {
+            itemIcon = iconRegister.registerIcon(String.format("%s%s_helm", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName())));
+        }
+        else if (this.armorType == ArmorType.CHEST.ordinal())
+        {
+            itemIcon = iconRegister.registerIcon(String.format("%s%s_helm", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName())));
+        }
+        else if (this.armorType == ArmorType.LEGS.ordinal())
+        {
+            itemIcon = iconRegister.registerIcon(String.format("%s%s_helm", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName())));
+        }
+        else // this.armorType == ArmorType.BOOTS.ordinal()
+        {
+            itemIcon = iconRegister.registerIcon(String.format("%s%s_helm", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName())));
+        }
+    }
+
     protected String getArmorTypeName(Item item)
     {
         if (item instanceof ItemArmor)
