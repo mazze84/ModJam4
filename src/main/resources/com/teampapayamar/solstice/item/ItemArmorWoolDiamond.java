@@ -9,9 +9,9 @@ import net.minecraftforge.common.ISpecialArmor;
 
 public class ItemArmorWoolDiamond extends ItemArmorSolstice
 {
-    public ItemArmorWoolDiamond(int renderIndex, ArmorType armorType)
+    public ItemArmorWoolDiamond(ArmorType armorType)
     {
-        super(ArmorMaterial.DIAMOND, renderIndex, armorType);
+        super(ArmorMaterial.DIAMOND, armorType);
     }
 
     @Override

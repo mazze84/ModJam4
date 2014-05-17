@@ -10,9 +10,9 @@ import net.minecraftforge.common.ISpecialArmor;
 
 public class ItemArmorWool extends ItemArmorSolstice
 {
-    public ItemArmorWool(int renderIndex, ArmorType armorType)
+    public ItemArmorWool(ArmorType armorType)
     {
-        super(ArmorMaterial.CLOTH, renderIndex, armorType);
+        super(ArmorMaterial.CLOTH, armorType);
         this.setUnlocalizedName(Names.Armor.WOOL_ARMOR);
     }
 

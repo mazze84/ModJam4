@@ -8,10 +8,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModItems
 {
-    public static final ItemArmorSolstice woolArmorHelm = new ItemArmorWool(0, ArmorType.HELMET);
-    public static final ItemArmorSolstice woolArmorChest = new ItemArmorWool(0, ArmorType.CHEST);
-    public static final ItemArmorSolstice woolArmorLegs = new ItemArmorWool(0, ArmorType.LEGS);
-    public static final ItemArmorSolstice woolArmorBoots = new ItemArmorWool(0, ArmorType.BOOTS);
+    public static final ItemArmorSolstice woolArmorHelm = new ItemArmorWool(ArmorType.HELMET);
+    public static final ItemArmorSolstice woolArmorChest = new ItemArmorWool(ArmorType.CHEST);
+    public static final ItemArmorSolstice woolArmorLegs = new ItemArmorWool(ArmorType.LEGS);
+    public static final ItemArmorSolstice woolArmorBoots = new ItemArmorWool(ArmorType.BOOTS);
 
     public static void init()
     {

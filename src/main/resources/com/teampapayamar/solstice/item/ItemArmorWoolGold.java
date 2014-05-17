@@ -9,9 +9,9 @@ import net.minecraftforge.common.ISpecialArmor;
 
 public class ItemArmorWoolGold extends ItemArmorSolstice
 {
-    public ItemArmorWoolGold(int renderIndex, ArmorType armorType)
+    public ItemArmorWoolGold(ArmorType armorType)
     {
-        super(ArmorMaterial.GOLD, renderIndex, armorType);
+        super(ArmorMaterial.GOLD, armorType);
     }
 
     @Override

@@ -9,9 +9,9 @@ import net.minecraftforge.common.ISpecialArmor;
 
 public class ItemArmorChainIron extends ItemArmorSolstice
 {
-    public ItemArmorChainIron(int renderIndex, ArmorType armorType)
+    public ItemArmorChainIron(ArmorType armorType)
     {
-        super(ArmorMaterial.CHAIN, renderIndex, armorType);
+        super(ArmorMaterial.CHAIN, armorType);
         // TODO Add a new ArmorMaterial for this armor
     }
 

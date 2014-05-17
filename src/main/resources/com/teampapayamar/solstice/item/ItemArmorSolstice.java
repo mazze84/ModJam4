@@ -8,6 +8,7 @@ import com.teampapayamar.solstice.util.NameHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -18,16 +19,16 @@ import net.minecraftforge.common.ISpecialArmor;
 
 public abstract class ItemArmorSolstice extends ItemArmor implements ISpecialArmor
 {
-    public ItemArmorSolstice(ArmorMaterial armorMaterial, int renderIndex, ArmorType armorType)
+    public ItemArmorSolstice(ArmorMaterial armorMaterial, ArmorType armorType)
     {
-        super(armorMaterial, renderIndex, armorType.ordinal());
+        super(armorMaterial, 0, armorType.ordinal());
         this.setCreativeTab(CreativeTabSolstice.SOLSTICE_TAB);
     }
 
     @Override
     public String getUnlocalizedName()
     {
-        return String.format("item.%s%s_%s", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName()), "helm");
+        return String.format("item.%s%s_%s", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName()), getArmorTypeName(this));
     }
 
     @Override
@@ -36,12 +37,23 @@ public abstract class ItemArmorSolstice extends ItemArmor implements ISpecialArm
         return String.format("item.%s%s_%s", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName(itemStack)), getArmorTypeName(itemStack.getItem()));
     }
 
+    /**
+     * Called by RenderBiped and RenderPlayer to determine the armor texture that
+     * should be use for the currently equiped item.
+     * This will only be called on instances of ItemArmor.
+     *
+     * Returning null from this function will use the default value.
+     *
+     * @param stack ItemStack for the equpt armor
+     * @param entity The entity wearing the armor
+     * @param slot The slot the armor is in
+     * @param type The subtype, can be null or "overlay"
+     * @return Path of texture to bind, or null to use default
+     */
     @Override
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister iconRegister)
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
     {
-        itemIcon = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
-        // Something here is bugged, but I need to let the dogs out and put them to bed for the night BRB!
+        return null;
     }
 
     protected String getArmorTypeName(Item item)
