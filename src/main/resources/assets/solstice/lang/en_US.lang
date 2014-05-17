@@ -1,5 +1,28 @@
+#Seasons
+season.solstice:winter=Winter
+season.solstice:spring=Spring
+season.solstice:summer=Summer
+season.solstice:autumn=Autumn
+
+# Months
+month.solstice:one=Jamuary
+month.solstice:two=February*
+month.solstice:three=March*
+month.solstice:four=April*
+month.solstice:five=May*
+month.solstice:six=June*
+month.solstice:seven=July*
+month.solstice:eight=August*
+month.solstice:nine=September*
+month.solstice:ten=Blocktober
+month.solstice:eleven=Moovember
+month.solstice:twelve=December*
+
 # Item localizations
 item.solstice:woolLinedIronHelmet=Wool Lined Iron Helmet
 item.solstice:woolLinedIronChestPlate=Wool Lined Iron Chestplate
 item.solstice:woolLinedIronLeggings=Wool Lined Iron Leggings
 item.solstice:woolLinedIronBoots=Wool Lined Iron Boots
+
+
+# Talking over some design stuff with Chris, and getting more coffee
