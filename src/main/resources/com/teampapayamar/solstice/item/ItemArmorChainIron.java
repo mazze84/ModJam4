@@ -1,5 +1,6 @@
 package com.teampapayamar.solstice.item;
 
+import com.teampapayamar.solstice.reference.Names;
 import com.teampapayamar.solstice.reference.Textures;
 import com.teampapayamar.solstice.util.ArmorType;
 import net.minecraft.entity.Entity;
@@ -13,6 +14,7 @@ public class ItemArmorChainIron extends ItemArmorSolstice
     public ItemArmorChainIron(ArmorType armorType)
     {
         super(ArmorMaterial.CHAIN, armorType);
+        this.setUnlocalizedName(Names.Armor.CHAIN_IRON_ARMOR);
         // TODO Add a new ArmorMaterial for this armor
     }
 

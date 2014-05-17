@@ -1,5 +1,6 @@
 package com.teampapayamar.solstice.item;
 
+import com.teampapayamar.solstice.reference.Names;
 import com.teampapayamar.solstice.reference.Textures;
 import com.teampapayamar.solstice.util.ArmorType;
 import net.minecraft.entity.Entity;
@@ -13,6 +14,7 @@ public class ItemArmorWoolGold extends ItemArmorSolstice
     public ItemArmorWoolGold(ArmorType armorType)
     {
         super(ArmorMaterial.GOLD, armorType);
+        this.setUnlocalizedName(Names.Armor.WOOL_LINED_GOLD_ARMOR);
     }
 
     @Override
