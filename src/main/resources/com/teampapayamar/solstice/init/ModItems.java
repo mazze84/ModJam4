@@ -7,6 +7,11 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModItems
 {
+    public static final ItemArmorSolstice swimSuitHelm = new ItemArmorSwimSuit(ArmorType.HELMET);
+    public static final ItemArmorSolstice swimSuitChest = new ItemArmorSwimSuit(ArmorType.CHEST);
+    public static final ItemArmorSolstice swimSuitLegs = new ItemArmorSwimSuit(ArmorType.LEGS);
+    public static final ItemArmorSolstice swimSuitBoots = new ItemArmorSwimSuit(ArmorType.BOOTS);
+
     public static final ItemArmorSolstice woolArmorHelm = new ItemArmorWool(ArmorType.HELMET);
     public static final ItemArmorSolstice woolArmorChest = new ItemArmorWool(ArmorType.CHEST);
     public static final ItemArmorSolstice woolArmorLegs = new ItemArmorWool(ArmorType.LEGS);
@@ -39,6 +44,11 @@ public class ModItems
 
     public static void init()
     {
+        GameRegistry.registerItem(swimSuitHelm, "item." + Names.Armor.SWIM_SUIT_ARMOR_HELM);
+        GameRegistry.registerItem(swimSuitChest, "item." + Names.Armor.SWIM_SUIT_ARMOR_CHEST);
+        GameRegistry.registerItem(swimSuitLegs, "item." + Names.Armor.SWIM_SUIT_ARMOR_LEGS);
+        GameRegistry.registerItem(swimSuitBoots, "item." + Names.Armor.SWIM_SUIT_ARMOR_BOOTS);
+
         GameRegistry.registerItem(woolArmorHelm, "item." + Names.Armor.WOOL_ARMOR_HELM);
         GameRegistry.registerItem(woolArmorChest, "item." + Names.Armor.WOOL_ARMOR_CHEST);
         GameRegistry.registerItem(woolArmorLegs, "item." + Names.Armor.WOOL_ARMOR_LEGS);
