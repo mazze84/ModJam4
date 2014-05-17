@@ -28,7 +28,32 @@ day.solstice:six=Friday
 day.solstice:seven=Saturday
 
 # Item localizations
-item.solstice:woolLinedIronHelmet=Wool Lined Iron Helmet
-item.solstice:woolLinedIronChestPlate=Wool Lined Iron Chestplate
-item.solstice:woolLinedIronLeggings=Wool Lined Iron Leggings
-item.solstice:woolLinedIronBoots=Wool Lined Iron Boots
+item.solstice:woolarmor_helm=Wool Hat
+item.solstice:woolarmor_chest=Wool Sweater
+item.solstice:woolarmor_legs=Wool Leggings
+item.solstice:woolarmor_boots=Wool Boots
+
+item.solstice:wooliron_helm=Wool Lined Iron Helmet
+item.solstice:wooliron_chest=Wool Lined Iron Chestplate
+item.solstice:wooliron_legs=Wool Lined Iron Leggings
+item.solstice:wooliron_boots=Wool Lined Iron Boots
+
+item.solstice:woolgold_helm=Wool Lined Gold Helmet
+item.solstice:woolgold_chest=Wool Lined Gold Chestplate
+item.solstice:woolgold_legs=Wool Lined Gold Leggings
+item.solstice:woolgold_boots=Wool Lined Gold Boots
+
+item.solstice:wooldiamond_helm=Wool Lined Diamond Helmet
+item.solstice:wooldiamond_chest=Wool Lined Diamond Chestplate
+item.solstice:wooldiamond_legs=Wool Lined Diamond Leggings
+item.solstice:wooldiamond_boots=Wool Lined Diamond Boots
+
+item.solstice:modironchain_helm=Iron Chain Helmet
+item.solstice:modironchain_chest=Iron Chain Chestplate
+item.solstice:modironchain_legs=Iron Chain Leggings
+item.solstice:modironchain_boots=Iron Chain Boots
+
+item.solstice:modgoldchain_helm=Gold Chain Helmet
+item.solstice:modgoldchain_chest=Gold Chain Chestplate
+item.solstice:modgoldchain_legs=Gold Chain Leggings
+item.solstice:modgoldchain_boots=Gold Chain Boots

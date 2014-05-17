@@ -2,8 +2,12 @@ package com.teampapayamar.solstice.item;
 
 import com.teampapayamar.solstice.creativetab.CreativeTabSolstice;
 import com.teampapayamar.solstice.reference.Reference;
+import com.teampapayamar.solstice.reference.Textures;
+import com.teampapayamar.solstice.util.ArmorType;
+import com.teampapayamar.solstice.util.NameHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -11,32 +15,38 @@ import net.minecraftforge.common.ISpecialArmor;
 
 public abstract class ItemArmorSolstice extends ItemArmor implements ISpecialArmor
 {
-    public ItemArmorSolstice(ArmorMaterial armorMaterial, int renderIndex, int armorType)
+    public ItemArmorSolstice(ArmorMaterial armorMaterial, int renderIndex, ArmorType armorType)
     {
-        super(armorMaterial, renderIndex, armorType);
+        super(armorMaterial, renderIndex, armorType.ordinal());
         this.setCreativeTab(CreativeTabSolstice.SOLSTICE_TAB);
     }
 
     @Override
     public String getUnlocalizedName(ItemStack itemStack)
     {
-        if (itemStack.getItem() instanceof ItemArmorSolstice)
+        return String.format("item.%s%s_%s", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName(itemStack)), getArmorTypeName(itemStack.getItem()));
+    }
+
+    protected String getArmorTypeName(Item item)
+    {
+        if (item instanceof ItemArmor)
         {
-            if (((ItemArmorSolstice) itemStack.getItem()).armorType == 0)
+            ItemArmor itemArmor = (ItemArmor) item;
+            if (itemArmor.armorType == 0)
             {
-                return String.format("item.%s:%s", Reference.MOD_ID.toLowerCase(), "woolLinedIronHelmet");
+                return "helm";
             }
-            else if (((ItemArmorSolstice) itemStack.getItem()).armorType == 1)
+            else if (itemArmor.armorType == 1)
             {
-                return String.format("item.%s:%s", Reference.MOD_ID.toLowerCase(), "woolLinedIronChestPlate");
+                return "chest";
             }
-            else if (((ItemArmorSolstice) itemStack.getItem()).armorType == 2)
+            else if (itemArmor.armorType == 2)
             {
-                return String.format("item.%s:%s", Reference.MOD_ID.toLowerCase(), "woolLinedIronLeggings");
+                return "legs";
             }
-            else if (((ItemArmorSolstice) itemStack.getItem()).armorType == 3)
+            else if (itemArmor.armorType == 3)
             {
-                return String.format("item.%s:%s", Reference.MOD_ID.toLowerCase(), "woolLinedIronBoots");
+                return "boots";
             }
         }
 

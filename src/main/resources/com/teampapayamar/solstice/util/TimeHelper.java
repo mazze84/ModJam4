@@ -2,6 +2,8 @@ package com.teampapayamar.solstice.util;
 
 import com.teampapayamar.solstice.configuration.Settings;
 import com.teampapayamar.solstice.reference.Time;
+import net.minecraft.util.StatCollector;
+import net.minecraft.util.StringTranslate;
 
 public class TimeHelper
 {
@@ -20,31 +22,12 @@ public class TimeHelper
 
     public static String convertTicksToTimeString(long worldTime)
     {
-        // Offset world time by one season, to accommodate that we start players on the first day of Spring
-//        long adjustedWorldTime = worldTime + TICKS_IN_SEASON;
-//        long year = adjustedWorldTime / TICKS_IN_YEAR;
-//        long season = (adjustedWorldTime % TICKS_IN_YEAR) / TICKS_IN_SEASON;
-//        long month = (adjustedWorldTime % TICKS_IN_YEAR) / TICKS_IN_MONTH;
-//        long week_of_year = (adjustedWorldTime % TICKS_IN_YEAR) / TICKS_IN_WEEK;
-//        long week_of_month = (adjustedWorldTime % TICKS_IN_YEAR % TICKS_IN_MONTH) / TICKS_IN_WEEK;
-//        long day_of_year = (adjustedWorldTime % TICKS_IN_YEAR) / TICKS_IN_DAY;
-//        long day_of_month = (adjustedWorldTime % TICKS_IN_YEAR % TICKS_IN_MONTH) / TICKS_IN_DAY;
-//        long day_of_week = (adjustedWorldTime % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK) / TICKS_IN_DAY;
-//        long hours = (((adjustedWorldTime % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY) / TICKS_IN_HOUR) + 6) % 24;
-//        long minutes = (adjustedWorldTime % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK % TICKS_IN_DAY % TICKS_IN_HOUR) / TICKS_IN_MINUTE;
-
-//        return String.format("Year: %s, Season: %s, Month: %s, Day of Month, %s, Day of Week: %s, %02d:%02d %s", getYear(worldTime), getSeason(worldTime), getMonth(worldTime), getDayOfMonth(worldTime), getDayOfWeek(worldTime), getHour(worldTime, false), getMinutes(worldTime), getAMPM(worldTime));
-        return String.format("%s %s %s, %s AC %02d:%02d %s [%s]", Time.DAY_OF_WEEK[getDayOfWeek(worldTime)], Time.MONTHS[getMonth(worldTime)], getDayOfMonth(worldTime) + 1, getYear(worldTime), getHour(worldTime, false), getMinutes(worldTime), getAMPM(worldTime), Time.SEASONS[getSeason(worldTime)]);
+        return String.format("%s %s %s, %s AC %02d:%02d %s [%s]", getDayOfWeekName(worldTime), getMonthName(worldTime), getDayOfMonth(worldTime) + 1, getYear(worldTime), getHour(worldTime, false), getMinutes(worldTime), getAMPM(worldTime), getSeasonName(worldTime));
     }
 
     public static int getYear(long worldTime)
     {
         return ((((int) worldTime) + 2 * TICKS_IN_MONTH) / TICKS_IN_YEAR);
-    }
-
-    public static String getYear(long worldTime)
-    {
-
     }
 
     /**
@@ -79,9 +62,19 @@ public class TimeHelper
         }
     }
 
+    public static String getSeasonName(long worldTime)
+    {
+        return StatCollector.translateToLocal(Time.SEASONS[getSeason(worldTime)]);
+    }
+
     public static int getMonth(long worldTime)
     {
         return (((((int) worldTime) + 2 * TICKS_IN_MONTH) % TICKS_IN_YEAR)) / TICKS_IN_MONTH;
+    }
+
+    public static String getMonthName(long worldTime)
+    {
+        return StatCollector.translateToLocal(Time.MONTHS[getMonth(worldTime)]);
     }
 
     public static int getDayOfMonth(long worldTime)
@@ -92,6 +85,11 @@ public class TimeHelper
     public static int getDayOfWeek(long worldTime)
     {
         return ((((int) worldTime) + 2 * TICKS_IN_MONTH) % TICKS_IN_YEAR % TICKS_IN_MONTH % TICKS_IN_WEEK) / TICKS_IN_DAY;
+    }
+
+    public static String getDayOfWeekName(long worldTime)
+    {
+        return StatCollector.translateToLocal(Time.DAY_OF_WEEK[getDayOfWeek(worldTime)]);
     }
 
     public static int getHour(long worldTime, boolean is24HourTime)

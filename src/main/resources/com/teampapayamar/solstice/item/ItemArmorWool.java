@@ -1,5 +1,6 @@
 package com.teampapayamar.solstice.item;
 
+import com.teampapayamar.solstice.util.ArmorType;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -8,9 +9,10 @@ import net.minecraftforge.common.ISpecialArmor;
 
 public class ItemArmorWool extends ItemArmorSolstice
 {
-    public ItemArmorWool(int renderIndex, int armorType)
+    public ItemArmorWool(int renderIndex, ArmorType armorType)
     {
         super(ArmorMaterial.CLOTH, renderIndex, armorType);
+        this.setUnlocalizedName("woolarmor");
     }
 
     @Override

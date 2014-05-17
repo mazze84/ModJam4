@@ -1,5 +1,6 @@
 package com.teampapayamar.solstice.item;
 
+import com.teampapayamar.solstice.util.ArmorType;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -8,7 +9,7 @@ import net.minecraftforge.common.ISpecialArmor;
 
 public class ItemArmorWoolGold extends ItemArmorSolstice
 {
-    public ItemArmorWoolGold(int renderIndex, int armorType)
+    public ItemArmorWoolGold(int renderIndex, ArmorType armorType)
     {
         super(ArmorMaterial.GOLD, renderIndex, armorType);
     }

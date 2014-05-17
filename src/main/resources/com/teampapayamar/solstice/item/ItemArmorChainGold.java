@@ -7,11 +7,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.common.ISpecialArmor;
 
-public class ItemArmorWoolDiamond extends ItemArmorSolstice
+public class ItemArmorChainGold extends ItemArmorSolstice
 {
-    public ItemArmorWoolDiamond(int renderIndex, ArmorType armorType)
+    public ItemArmorChainGold(int renderIndex, ArmorType armorType)
     {
-        super(ArmorMaterial.DIAMOND, renderIndex, armorType);
+        super(ArmorMaterial.CHAIN, renderIndex, armorType);
+        // TODO Add a new ArmorMaterial for this armor
     }
 
     @Override
