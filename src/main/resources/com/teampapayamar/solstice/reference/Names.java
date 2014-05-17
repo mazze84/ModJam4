@@ -2,6 +2,12 @@ package com.teampapayamar.solstice.reference;
 
 public class Names
 {
+    public static class Block
+    {
+        public static final String CALENDAR = "calendar";
+        public static final String CAMP_FIRE = "campfire";
+    }
+
     public static class Armor
     {
         public static final String SWIM_SUIT_ARMOR = "swimsuit";
