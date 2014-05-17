@@ -18,6 +18,7 @@ public class ItemArmorWool extends ItemArmorSolstice
     {
         super(ArmorMaterial.CLOTH, armorType);
         this.setUnlocalizedName(Names.Armor.WOOL_ARMOR);
+        this.setTextureName(Textures.RESOURCE_PREFIX + getArmorTypeName(this));
     }
 
     /**
@@ -84,14 +85,6 @@ public class ItemArmorWool extends ItemArmorSolstice
     public void damageArmor(EntityLivingBase entity, ItemStack stack, DamageSource source, int damage, int slot)
     {
 
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister iconRegister)
-    {
-        super.registerIcons(iconRegister);
-        itemIcon = iconRegister.registerIcon(this.getUnlocalizedName());
     }
 
     /**

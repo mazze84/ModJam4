@@ -42,31 +42,31 @@ public class ModItems
         GameRegistry.registerItem(woolArmorHelm, "item." + Names.Armor.WOOL_ARMOR_HELM);
         GameRegistry.registerItem(woolArmorChest, "item." + Names.Armor.WOOL_ARMOR_CHEST);
         GameRegistry.registerItem(woolArmorLegs, "item." + Names.Armor.WOOL_ARMOR_LEGS);
-        GameRegistry.registerItem(woolArmorBoots, "item." + Names.Armor.WOOL_ARMOR_BOOTS);
-
-        GameRegistry.registerItem(woolIronHelm, "item." + Names.Armor.WOOL_LINED_IRON_HELM);
-        GameRegistry.registerItem(woolIronChest, "item." + Names.Armor.WOOL_LINED_IRON_CHEST);
-        GameRegistry.registerItem(woolIronLegs, "item." + Names.Armor.WOOL_LINED_IRON_LEGS);
-        GameRegistry.registerItem(woolIronBoots, "item." + Names.Armor.WOOL_LINED_IRON_BOOTS);
-
-        GameRegistry.registerItem(woolGoldHelm, "item." + Names.Armor.WOOL_LINED_GOLD_HELM);
-        GameRegistry.registerItem(woolGoldChest, "item." + Names.Armor.WOOL_LINED_GOLD_CHEST);
-        GameRegistry.registerItem(woolGoldLegs, "item." + Names.Armor.WOOL_LINED_GOLD_LEGS);
-        GameRegistry.registerItem(woolGoldBoots, "item." + Names.Armor.WOOL_LINED_GOLD_BOOTS);
-
-        GameRegistry.registerItem(woolDiamondHelm, "item." + Names.Armor.WOOL_LINED_DIAMOND_HELM);
-        GameRegistry.registerItem(woolDiamondChest, "item." + Names.Armor.WOOL_LINED_DIAMOND_CHEST);
-        GameRegistry.registerItem(woolDiamondLegs, "item." + Names.Armor.WOOL_LINED_DIAMOND_LEGS);
-        GameRegistry.registerItem(woolDiamondBoots, "item." + Names.Armor.WOOL_LINED_DIAMOND_BOOTS);
-
-        GameRegistry.registerItem(chainIronHelm, "item." + Names.Armor.CHAIN_IRON_HELM);
-        GameRegistry.registerItem(chainIronChest, "item." + Names.Armor.CHAIN_IRON_CHEST);
-        GameRegistry.registerItem(chainIronLegs, "item." + Names.Armor.CHAIN_IRON_LEGS);
-        GameRegistry.registerItem(chainIronBoots, "item." + Names.Armor.CHAIN_IRON_BOOTS);
-
-        GameRegistry.registerItem(chainGoldHelm, "item." + Names.Armor.CHAIN_GOLD_HELM);
-        GameRegistry.registerItem(chainGoldChest, "item." + Names.Armor.CHAIN_GOLD_CHEST);
-        GameRegistry.registerItem(chainGoldLegs, "item." + Names.Armor.CHAIN_GOLD_LEGS);
-        GameRegistry.registerItem(chainGoldBoots, "item." + Names.Armor.CHAIN_GOLD_BOOTS);
+//        GameRegistry.registerItem(woolArmorBoots, "item." + Names.Armor.WOOL_ARMOR_BOOTS);
+//
+//        GameRegistry.registerItem(woolIronHelm, "item." + Names.Armor.WOOL_LINED_IRON_HELM);
+//        GameRegistry.registerItem(woolIronChest, "item." + Names.Armor.WOOL_LINED_IRON_CHEST);
+//        GameRegistry.registerItem(woolIronLegs, "item." + Names.Armor.WOOL_LINED_IRON_LEGS);
+//        GameRegistry.registerItem(woolIronBoots, "item." + Names.Armor.WOOL_LINED_IRON_BOOTS);
+//
+//        GameRegistry.registerItem(woolGoldHelm, "item." + Names.Armor.WOOL_LINED_GOLD_HELM);
+//        GameRegistry.registerItem(woolGoldChest, "item." + Names.Armor.WOOL_LINED_GOLD_CHEST);
+//        GameRegistry.registerItem(woolGoldLegs, "item." + Names.Armor.WOOL_LINED_GOLD_LEGS);
+//        GameRegistry.registerItem(woolGoldBoots, "item." + Names.Armor.WOOL_LINED_GOLD_BOOTS);
+//
+//        GameRegistry.registerItem(woolDiamondHelm, "item." + Names.Armor.WOOL_LINED_DIAMOND_HELM);
+//        GameRegistry.registerItem(woolDiamondChest, "item." + Names.Armor.WOOL_LINED_DIAMOND_CHEST);
+//        GameRegistry.registerItem(woolDiamondLegs, "item." + Names.Armor.WOOL_LINED_DIAMOND_LEGS);
+//        GameRegistry.registerItem(woolDiamondBoots, "item." + Names.Armor.WOOL_LINED_DIAMOND_BOOTS);
+//
+//        GameRegistry.registerItem(chainIronHelm, "item." + Names.Armor.CHAIN_IRON_HELM);
+//        GameRegistry.registerItem(chainIronChest, "item." + Names.Armor.CHAIN_IRON_CHEST);
+//        GameRegistry.registerItem(chainIronLegs, "item." + Names.Armor.CHAIN_IRON_LEGS);
+//        GameRegistry.registerItem(chainIronBoots, "item." + Names.Armor.CHAIN_IRON_BOOTS);
+//
+//        GameRegistry.registerItem(chainGoldHelm, "item." + Names.Armor.CHAIN_GOLD_HELM);
+//        GameRegistry.registerItem(chainGoldChest, "item." + Names.Armor.CHAIN_GOLD_CHEST);
+//        GameRegistry.registerItem(chainGoldLegs, "item." + Names.Armor.CHAIN_GOLD_LEGS);
+//        GameRegistry.registerItem(chainGoldBoots, "item." + Names.Armor.CHAIN_GOLD_BOOTS);
     }
 }
