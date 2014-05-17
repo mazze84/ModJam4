@@ -14,11 +14,12 @@ import net.minecraftforge.common.ISpecialArmor;
 
 public abstract class ItemArmorSolstice extends ItemArmor implements ISpecialArmor
 {
-    public ItemArmorSolstice(ArmorMaterial armorMaterial, ArmorType armorType)
+    public ItemArmorSolstice(String armorName, ArmorMaterial armorMaterial, ArmorType armorType)
     {
         super(armorMaterial, 1, armorType.ordinal());
         this.setCreativeTab(CreativeTabSolstice.SOLSTICE_TAB);
-        this.setTextureName(String.format("%s%s_%s", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName()), getArmorTypeName(this.armorType)));
+        this.setUnlocalizedName(armorName);
+        this.setTextureName(String.format("%s%s_%s", Textures.RESOURCE_PREFIX, armorName, getArmorTypeName(this.armorType)));
     }
 
     @Override
@@ -46,22 +47,7 @@ public abstract class ItemArmorSolstice extends ItemArmor implements ISpecialArm
         if (item instanceof ItemArmor)
         {
             ItemArmor itemArmor = (ItemArmor) item;
-            if (itemArmor.armorType == 0)
-            {
-                return "helm";
-            }
-            else if (itemArmor.armorType == 1)
-            {
-                return "chest";
-            }
-            else if (itemArmor.armorType == 2)
-            {
-                return "legs";
-            }
-            else if (itemArmor.armorType == 3)
-            {
-                return "boots";
-            }
+            return getArmorTypeName(itemArmor.armorType);
         }
 
         return "";

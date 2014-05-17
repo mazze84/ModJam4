@@ -13,8 +13,7 @@ public class ItemArmorWoolGold extends ItemArmorSolstice
 {
     public ItemArmorWoolGold(ArmorType armorType)
     {
-        super(ArmorMaterial.GOLD, armorType);
-        this.setUnlocalizedName(Names.Armor.WOOL_LINED_GOLD_ARMOR);
+        super(Names.Armor.WOOL_LINED_GOLD_ARMOR, ArmorMaterial.GOLD, armorType);
     }
 
     @Override

@@ -13,8 +13,7 @@ public class ItemArmorWoolDiamond extends ItemArmorSolstice
 {
     public ItemArmorWoolDiamond(ArmorType armorType)
     {
-        super(ArmorMaterial.DIAMOND, armorType);
-        this.setUnlocalizedName(Names.Armor.WOOL_LINED_DIAMOND_ARMOR);
+        super(Names.Armor.WOOL_LINED_DIAMOND_ARMOR, ArmorMaterial.DIAMOND, armorType);
     }
 
     @Override

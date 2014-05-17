@@ -13,8 +13,7 @@ public class ItemArmorChainIron extends ItemArmorSolstice
 {
     public ItemArmorChainIron(ArmorType armorType)
     {
-        super(ArmorMaterial.CHAIN, armorType);
-        this.setUnlocalizedName(Names.Armor.CHAIN_IRON_ARMOR);
+        super(Names.Armor.CHAIN_IRON_ARMOR, ArmorMaterial.CHAIN, armorType);
         // TODO Add a new ArmorMaterial for this armor
     }
 
