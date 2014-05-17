@@ -5,6 +5,9 @@ import com.teampapayamar.solstice.reference.Reference;
 import com.teampapayamar.solstice.reference.Textures;
 import com.teampapayamar.solstice.util.ArmorType;
 import com.teampapayamar.solstice.util.NameHelper;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -22,9 +25,23 @@ public abstract class ItemArmorSolstice extends ItemArmor implements ISpecialArm
     }
 
     @Override
+    public String getUnlocalizedName()
+    {
+        return String.format("item.%s%s_%s", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName()), "helm");
+    }
+
+    @Override
     public String getUnlocalizedName(ItemStack itemStack)
     {
         return String.format("item.%s%s_%s", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName(itemStack)), getArmorTypeName(itemStack.getItem()));
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IIconRegister iconRegister)
+    {
+        itemIcon = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+        // Something here is bugged, but I need to let the dogs out and put them to bed for the night BRB!
     }
 
     protected String getArmorTypeName(Item item)
