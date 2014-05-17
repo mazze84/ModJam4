@@ -4,6 +4,7 @@ import com.teampapayamar.solstice.creativetab.CreativeTabSolstice;
 import com.teampapayamar.solstice.reference.Reference;
 import com.teampapayamar.solstice.reference.Textures;
 import com.teampapayamar.solstice.util.ArmorType;
+import com.teampapayamar.solstice.util.LogHelper;
 import com.teampapayamar.solstice.util.NameHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -41,21 +42,23 @@ public abstract class ItemArmorSolstice extends ItemArmor implements ISpecialArm
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister)
     {
+        LogHelper.info(String.format("%s%s_helm", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
+
         if (this.armorType == ArmorType.HELMET.ordinal())
         {
-            itemIcon = iconRegister.registerIcon(String.format("%s%s_helm", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName())));
+            itemIcon = iconRegister.registerIcon(String.format("%s%s_helm", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
         }
         else if (this.armorType == ArmorType.CHEST.ordinal())
         {
-            itemIcon = iconRegister.registerIcon(String.format("%s%s_helm", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName())));
+            itemIcon = iconRegister.registerIcon(String.format("%s%s_helm", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
         }
         else if (this.armorType == ArmorType.LEGS.ordinal())
         {
-            itemIcon = iconRegister.registerIcon(String.format("%s%s_helm", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName())));
+            itemIcon = iconRegister.registerIcon(String.format("%s%s_helm", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
         }
         else // this.armorType == ArmorType.BOOTS.ordinal()
         {
-            itemIcon = iconRegister.registerIcon(String.format("%s%s_helm", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName())));
+            itemIcon = iconRegister.registerIcon(String.format("%s%s_helm", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
         }
     }
 
