@@ -27,6 +27,10 @@ day.solstice:five=Thursday
 day.solstice:six=Friday
 day.solstice:seven=Saturday
 
+# Block localizations
+tile.solstice:calendar=Calendar
+tile.solstice:campfire=Camp Fire
+
 # Item localizations
 item.solstice:swimsuit_helm.name=Swim Suit Cap
 item.solstice:swimsuit_chest.name=Swim Suit Top
