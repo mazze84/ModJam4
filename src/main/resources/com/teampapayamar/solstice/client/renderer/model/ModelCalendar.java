@@ -1,77 +1,40 @@
 package com.teampapayamar.solstice.client.renderer.model;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
+@SideOnly(Side.CLIENT)
 public class ModelCalendar extends ModelBase
 {
-    ModelRenderer Shape1;
-    ModelRenderer Shape2;
-    ModelRenderer Shape3;
-    ModelRenderer Shape4;
+    public ModelRenderer shape1 = (new ModelRenderer(this, 22, 0)).setTextureSize(64, 64);
+    public ModelRenderer shape2 = (new ModelRenderer(this, 0, 10)).setTextureSize(64, 64);
+    public ModelRenderer shape3 = (new ModelRenderer(this, 0, 0)).setTextureSize(64, 64);
+    public ModelRenderer shape4 = (new ModelRenderer(this, 22, 4)).setTextureSize(64, 64);
 
     public ModelCalendar()
     {
-        textureWidth = 64;
-        textureHeight = 32;
+        this.shape1.addBox(2F, 0F, 0F, 12, 2, 2);
+        shape1.setRotationPoint(-8F, 8F, 6F);
 
-        Shape1 = new ModelRenderer(this, 22, 0);
-        Shape1.addBox(2F, 0F, 0F, 12, 2, 2);
-        Shape1.setRotationPoint(-8F, 8F, 6F);
-        Shape1.setTextureSize(64, 32);
-        Shape1.mirror = true;
-        setRotation(Shape1, 0F, 0F, 0F);
+        this.shape2.addBox(0F, 0F, 0F, 12, 10, 0);
+        this.shape2.setRotationPoint(-6F, 10F, 8F);
 
-        Shape2 = new ModelRenderer(this, 0, 10);
-        Shape2.addBox(0F, 0F, 0F, 12, 10, 0);
-        Shape2.setRotationPoint(-6F, 10F, 8F);
-        Shape2.setTextureSize(64, 32);
-        Shape2.mirror = true;
-        setRotation(Shape2, 0F, 0F, 0F);
+        this.shape3.addBox(0F, 0F, 0F, 10, 9, 1);
+        this.shape3.setRotationPoint(-5F, 10F, 6F);
 
-        Shape3 = new ModelRenderer(this, 0, 0);
-        Shape3.addBox(0F, 0F, 0F, 10, 9, 1);
-        Shape3.setRotationPoint(-5F, 10F, 6F);
-        Shape3.setTextureSize(64, 32);
-        Shape3.mirror = true;
-        setRotation(Shape3, 0F, 0F, 0F);
-
-        Shape4 = new ModelRenderer(this, 22, 4);
-        Shape4.addBox(0F, 0F, 0F, 8, 1, 1);
-        Shape4.setRotationPoint(-4F, 7F, 7F);
-        Shape4.setTextureSize(64, 32);
-        Shape4.mirror = true;
-        setRotation(Shape4, 0F, 0F, 0.0174533F);
-    }
-
-    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
-    {
-        super.render(entity, f, f1, f2, f3, f4, f5);
-        setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-        Shape1.render(f5);
-        Shape2.render(f5);
-        Shape3.render(f5);
-        Shape4.render(f5);
-    }
-
-    private void setRotation(ModelRenderer model, float x, float y, float z)
-    {
-        model.rotateAngleX = x;
-        model.rotateAngleY = y;
-        model.rotateAngleZ = z;
-    }
-
-    public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
-    {
-        super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+        this.shape4.addBox(0F, 0F, 0F, 8, 1, 1);
+        this.shape4.setRotationPoint(-4F, 7F, 7F);
+        shape4.rotateAngleZ = 0.0174533F;
     }
 
     public void renderAll()
     {
-        Shape1.render(1f);
-        Shape2.render(1f);
-        Shape3.render(1f);
-        Shape4.render(1f);
+        this.shape1.render(1f);
+        this.shape2.render(1f);
+        this.shape3.render(1f);
+        this.shape4.render(1f);
     }
 }
