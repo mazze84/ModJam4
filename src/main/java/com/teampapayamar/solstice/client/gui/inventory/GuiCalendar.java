@@ -28,15 +28,13 @@ public class GuiCalendar extends GuiContainer
     {
         long worldTime = tileEntityCalendar.getWorldObj().getWorldTime();
         String monthName = StatCollector.translateToLocal(TimeHelper.getMonthName(worldTime));
-        int dayOfMonth = TimeHelper.getDayOfMonth(worldTime);
+        int dayOfMonth = TimeHelper.getDayOfMonth(worldTime) + 1;
 
         // Draw Month name
         fontRendererObj.drawString(TimeHelper.getYear(worldTime) + " AC", 28, 38, 4210752);
-        fontRendererObj.drawString(monthName, 28, 68, 4210752);
+        fontRendererObj.drawString(monthName, 28, 66, 4210752);
 
         int day = 0;
-
-        // TODO Bug: not showing the last day of the month
 
         for (int i = 0; i < 4; i++)
         {
