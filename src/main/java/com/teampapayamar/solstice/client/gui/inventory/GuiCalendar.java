@@ -26,11 +26,26 @@ public class GuiCalendar extends GuiContainer
     @Override
     protected void drawGuiContainerForegroundLayer(int x, int y)
     {
+        // Draw Month name
         fontRendererObj.drawString(StatCollector.translateToLocal(TimeHelper.getMonthName(tileEntityCalendar.getWorldObj().getWorldTime())), 28, 68, 4210752);
 
-        fontRendererObj.drawString("1", 30, 80, Integer.parseInt("ffffff", 16));
-        fontRendererObj.drawString("2", 71, 80, Integer.parseInt("ffffff", 16));
-        fontRendererObj.drawString("3", 95, 80, Integer.parseInt("ffffff", 16));
+        // Draw Day labels
+        int day = 0;
+        for (int j = 0; j < 4; j++)
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                day++;
+                fontRendererObj.drawString("" + day, 31 + (i * 27), 80 + (j * 26), Integer.parseInt("ffffff", 16));
+            }
+        }
+
+        // Draw X's over day's that have passed
+        GL11.glColor4f(1f, 1f, 1f, 1f);
+        this.mc.getTextureManager().bindTexture(Textures.GUI_CALENDAR);
+        this.drawTexturedModalRect(32, 81, 240, 7, 15, 18);
+        this.drawTexturedModalRect(59, 81, 240, 7, 15, 18);
+        this.drawTexturedModalRect(59 + 27, 81, 240, 7, 15, 18);
     }
 
     @Override
