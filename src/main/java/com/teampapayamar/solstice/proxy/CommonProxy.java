@@ -1,5 +1,6 @@
 package com.teampapayamar.solstice.proxy;
 
+import com.teampapayamar.solstice.handler.CommandEventHandler;
 import com.teampapayamar.solstice.handler.LivingUpdateEventHandler;
 import com.teampapayamar.solstice.handler.WorldTickEventHandler;
 import com.teampapayamar.solstice.reference.Names;
@@ -16,6 +17,7 @@ public abstract class CommonProxy implements IProxy
     {
         FMLCommonHandler.instance().bus().register(new WorldTickEventHandler());
         MinecraftForge.EVENT_BUS.register(new LivingUpdateEventHandler());
+        MinecraftForge.EVENT_BUS.register(new CommandEventHandler());
     }
 
     @Override
