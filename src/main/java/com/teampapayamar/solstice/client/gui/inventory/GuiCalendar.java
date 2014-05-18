@@ -34,6 +34,7 @@ public class GuiCalendar extends GuiContainer
         fontRendererObj.drawString(monthName, 28, 68, 4210752);
 
         int day = 0;
+
         for (int i = 0; i < 4; i++)
         {
             for (int j = 0; j < 7; j++)
