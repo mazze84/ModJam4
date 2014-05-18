@@ -16,6 +16,7 @@ public class BlockCalendar extends BlockSolstice implements ITileEntityProvider
     {
         super(Material.wood);
         this.setBlockName(Names.Block.CALENDAR);
+        this.setHardness(0.5f);
     }
 
     @Override
