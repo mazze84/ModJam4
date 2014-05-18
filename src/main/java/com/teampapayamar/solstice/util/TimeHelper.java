@@ -25,7 +25,7 @@ public class TimeHelper
 
     public static int getYear(long worldTime)
     {
-        return ((((int) worldTime) + 2 * TICKS_IN_MONTH) / TICKS_IN_YEAR);
+        return ((((int) worldTime) + 2 * TICKS_IN_MONTH) / TICKS_IN_YEAR) + 1;
     }
 
     /**

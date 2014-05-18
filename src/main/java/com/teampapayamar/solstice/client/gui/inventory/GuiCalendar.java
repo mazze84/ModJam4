@@ -31,7 +31,7 @@ public class GuiCalendar extends GuiContainer
         int dayOfMonth = TimeHelper.getDayOfMonth(worldTime);
 
         // Draw Month name
-        fontRendererObj.drawString(monthName, 28, 68, 4210752);
+        fontRendererObj.drawString(monthName + " " + TimeHelper.getYear(worldTime) + " AC", 28, 68, 4210752);
 
         int day = 0;
 
@@ -50,6 +50,12 @@ public class GuiCalendar extends GuiContainer
                     GL11.glColor4f(1f, 1f, 1f, 1f);
                     this.mc.getTextureManager().bindTexture(Textures.GUI_CALENDAR);
                     this.drawTexturedModalRect(32 + (j * 27), 81 + (i * 26), 240, 7, 15, 18);
+                }
+                else if (day == dayOfMonth)
+                {
+                    GL11.glColor4f(1f, 1f, 1f, 1f);
+                    this.mc.getTextureManager().bindTexture(Textures.GUI_CALENDAR);
+                    this.drawTexturedModalRect(32 + (j * 27), 81 + (i * 26), 240, 26, 15, 16);
                 }
             }
         }
