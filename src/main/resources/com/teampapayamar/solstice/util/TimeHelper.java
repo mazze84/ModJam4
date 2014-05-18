@@ -1,9 +1,7 @@
 package com.teampapayamar.solstice.util;
 
-import com.teampapayamar.solstice.configuration.Settings;
 import com.teampapayamar.solstice.reference.Time;
 import net.minecraft.util.StatCollector;
-import net.minecraft.util.StringTranslate;
 
 public class TimeHelper
 {
@@ -31,13 +29,11 @@ public class TimeHelper
     }
 
     /**
-     *  Seasons go:
-     *      Months 11, 0, 1 == Winter
-     *      Months 2, 3, 4 == Spring
-     *      Months 5, 6, 7 == Summer
-     *      Months 8, 9, 10 == Fall/Autumn
+     * Seasons go: Months 11, 0, 1 == Winter Months 2, 3, 4 == Spring Months 5, 6, 7 == Summer Months 8, 9, 10 ==
+     * Fall/Autumn
      *
      * @param worldTime
+     *
      * @return
      */
     public static int getSeason(long worldTime)

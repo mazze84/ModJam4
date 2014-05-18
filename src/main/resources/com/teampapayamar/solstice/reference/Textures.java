@@ -6,20 +6,17 @@ public class Textures
 {
     public static final String RESOURCE_PREFIX = Reference.MOD_ID.toLowerCase() + ":";
     public static final String GUI_RESOURCE_LOCATION = "textures/gui/";
-    public static final String MODEL_RESOURCE_LOCATION = "textures/models/";
-    public static final String ARMOR_RESOURCE_LOCATION = "textures/models/armor/";
-
     /**
      * Gui texture locations
      */
     public static final ResourceLocation GUI_CALENDAR = getResourceLocation(GUI_RESOURCE_LOCATION + "calendar.png");
-
+    public static final String MODEL_RESOURCE_LOCATION = "textures/models/";
     /**
      * Model texture locations
      */
     public static final ResourceLocation MODEL_CALENDAR = getResourceLocation(MODEL_RESOURCE_LOCATION + "calendar.png");
     public static final ResourceLocation MODEL_CAMPFIRE = getResourceLocation(MODEL_RESOURCE_LOCATION + "campfire.png");
-
+    public static final String ARMOR_RESOURCE_LOCATION = "textures/models/armor/";
     /**
      * Armor Textures Layer1 contains Helm, Chest, and Boots Layer2 contains Legs
      */
@@ -42,6 +39,4 @@ public class Textures
     {
         return new ResourceLocation(Reference.MOD_ID.toLowerCase(), location);
     }
-
-
 }

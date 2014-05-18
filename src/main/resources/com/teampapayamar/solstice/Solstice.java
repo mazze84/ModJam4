@@ -1,6 +1,7 @@
 package com.teampapayamar.solstice;
 
 import com.teampapayamar.solstice.configuration.ConfigurationHandler;
+import com.teampapayamar.solstice.handler.GuiHandler;
 import com.teampapayamar.solstice.init.ModBlocks;
 import com.teampapayamar.solstice.init.ModItems;
 import com.teampapayamar.solstice.network.PacketHandler;
@@ -11,6 +12,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = "1.0")
 public class Solstice
@@ -36,6 +38,8 @@ public class Solstice
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
+        NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
+
         proxy.registerEventHandlers();
 
         proxy.registerTileEntities();

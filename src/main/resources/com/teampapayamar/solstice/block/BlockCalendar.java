@@ -1,10 +1,13 @@
 package com.teampapayamar.solstice.block;
 
+import com.teampapayamar.solstice.Solstice;
+import com.teampapayamar.solstice.reference.GuiIds;
 import com.teampapayamar.solstice.reference.Names;
 import com.teampapayamar.solstice.reference.RenderIds;
 import com.teampapayamar.solstice.tileentity.TileEntityCalendar;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
@@ -50,7 +53,7 @@ public class BlockCalendar extends BlockSolstice implements ITileEntityProvider
         {
             TileEntityCalendar tileEntityCalendar = (TileEntityCalendar) world.getTileEntity(x, y, z);
 
-            switch(tileEntityCalendar.getOrientation())
+            switch (tileEntityCalendar.getOrientation())
             {
                 case SOUTH:
                 {
@@ -80,5 +83,23 @@ public class BlockCalendar extends BlockSolstice implements ITileEntityProvider
         }
 
         return super.collisionRayTrace(world, x, y, z, startVector, endVector);
+    }
+
+    @Override
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer entityPlayer, int p_149727_6_, float p_149727_7_, float p_149727_8_, float p_149727_9_)
+    {
+        if (entityPlayer.isSneaking())
+        {
+            return false;
+        }
+        else
+        {
+            if (!world.isRemote && world.getTileEntity(x, y, z) instanceof TileEntityCalendar)
+            {
+                entityPlayer.openGui(Solstice.instance, GuiIds.CALENDAR, world, x, y, z);
+            }
+        }
+
+        return true;
     }
 }

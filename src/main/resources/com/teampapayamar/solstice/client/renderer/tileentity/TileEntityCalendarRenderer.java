@@ -33,9 +33,9 @@ public class TileEntityCalendarRenderer extends TileEntitySpecialRenderer
 
             GL11.glDisable(GL11.GL_CULL_FACE);
             GL11.glPushMatrix();
-                renderTileEntityForOrientation(x, y, z, orientation);
-                GL11.glRotatef(180f, 0f, 0f, 1f);
-                modelCalendar.renderAll();
+            renderTileEntityForOrientation(x, y, z, orientation);
+            GL11.glRotatef(180f, 0f, 0f, 1f);
+            modelCalendar.renderAll();
             GL11.glPopMatrix();
             GL11.glEnable(GL11.GL_CULL_FACE);
         }

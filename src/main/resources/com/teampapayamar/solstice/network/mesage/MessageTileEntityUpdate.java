@@ -15,7 +15,9 @@ public class MessageTileEntityUpdate implements IMessage, IMessageHandler<Messag
     public byte orientation, state;
     public String owner;
 
-    public MessageTileEntityUpdate() {}
+    public MessageTileEntityUpdate()
+    {
+    }
 
     public MessageTileEntityUpdate(TileEntitySolstice tileEntitySolstice)
     {
