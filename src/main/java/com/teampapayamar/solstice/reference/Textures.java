@@ -28,6 +28,7 @@ public class Textures
      * Gui texture locations
      */
     public static final ResourceLocation GUI_CALENDAR = getResourceLocation(GUI_RESOURCE_LOCATION + "calendar.png");
+    public static final ResourceLocation GUI_CALENDAR_HIGHLIGHT = getResourceLocation(GUI_RESOURCE_LOCATION + "calendar_highlight.png");
     public static final String MODEL_RESOURCE_LOCATION = "textures/models/";
     /**
      * Model texture locations

@@ -54,8 +54,9 @@ public class GuiCalendar extends GuiContainer
                 else if (day == dayOfMonth)
                 {
                     GL11.glColor4f(1f, 1f, 1f, 1f);
-                    this.mc.getTextureManager().bindTexture(Textures.GUI_CALENDAR);
-                    this.drawTexturedModalRect(32 + (j * 27), 81 + (i * 26), 240, 26, 15, 16);
+                    this.mc.getTextureManager().bindTexture(Textures.GUI_CALENDAR_HIGHLIGHT);
+//                    this.drawTexturedModalRect(32 + (j * 27), 81 + (i * 26), 0, 0, 32, 32);
+                    this.drawTexturedModalRect(0, 0, 0, 0, 32, 32);
                 }
             }
         }
@@ -68,6 +69,6 @@ public class GuiCalendar extends GuiContainer
         this.mc.getTextureManager().bindTexture(Textures.GUI_CALENDAR);
         int xStart = (width - xSize) / 2;
         int yStart = (height - ySize) / 2;
-        this.drawTexturedModalRect(xStart, yStart, 0, 0, xSize, ySize);
+//        this.drawTexturedModalRect(xStart, yStart, 0, 0, xSize, ySize);
     }
 }
