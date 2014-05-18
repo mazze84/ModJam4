@@ -26,26 +26,32 @@ public class GuiCalendar extends GuiContainer
     @Override
     protected void drawGuiContainerForegroundLayer(int x, int y)
     {
-        // Draw Month name
-        fontRendererObj.drawString(StatCollector.translateToLocal(TimeHelper.getMonthName(tileEntityCalendar.getWorldObj().getWorldTime())), 28, 68, 4210752);
+        long worldTime = tileEntityCalendar.getWorldObj().getWorldTime();
+        String monthName = StatCollector.translateToLocal(TimeHelper.getMonthName(worldTime));
+        int dayOfMonth = TimeHelper.getDayOfMonth(worldTime);
 
-        // Draw Day labels
+        // Draw Month name
+        fontRendererObj.drawString(monthName, 28, 68, 4210752);
+
         int day = 0;
-        for (int j = 0; j < 4; j++)
+        for (int i = 0; i < 4; i++)
         {
-            for (int i = 0; i < 7; i++)
+            for (int j = 0; j < 7; j++)
             {
                 day++;
-                fontRendererObj.drawString("" + day, 31 + (i * 27), 80 + (j * 26), Integer.parseInt("ffffff", 16));
+
+                // Draw Day labels
+                fontRendererObj.drawString("" + day, 31 + (j * 27), 80 + (i * 26), Integer.parseInt("ffffff", 16));
+
+                // Draw X's over day's that have passed
+                if (day < dayOfMonth)
+                {
+                    GL11.glColor4f(1f, 1f, 1f, 1f);
+                    this.mc.getTextureManager().bindTexture(Textures.GUI_CALENDAR);
+                    this.drawTexturedModalRect(32 + (j * 27), 81 + (i * 26), 240, 7, 15, 18);
+                }
             }
         }
-
-        // Draw X's over day's that have passed
-        GL11.glColor4f(1f, 1f, 1f, 1f);
-        this.mc.getTextureManager().bindTexture(Textures.GUI_CALENDAR);
-        this.drawTexturedModalRect(32, 81, 240, 7, 15, 18);
-        this.drawTexturedModalRect(59, 81, 240, 7, 15, 18);
-        this.drawTexturedModalRect(59 + 27, 81, 240, 7, 15, 18);
     }
 
     @Override
