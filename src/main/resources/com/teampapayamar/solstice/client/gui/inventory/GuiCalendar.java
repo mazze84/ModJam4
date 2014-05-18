@@ -19,14 +19,14 @@ public class GuiCalendar extends GuiContainer
     {
         super(new ContainerCalendar(tileEntityCalendar));
         this.tileEntityCalendar = tileEntityCalendar;
-        xSize = 256;
-        ySize = 256;
+        xSize = 239;
+        ySize = 250;
     }
 
     @Override
     protected void drawGuiContainerForegroundLayer(int x, int y)
     {
-        fontRendererObj.drawString(StatCollector.translateToLocal(TimeHelper.getMonthName(tileEntityCalendar.getWorldObj().getWorldTime())), 45, 64, 4210752);
+        fontRendererObj.drawString(StatCollector.translateToLocal(TimeHelper.getMonthName(tileEntityCalendar.getWorldObj().getWorldTime())), 25, 64, 4210752);
 
         fontRendererObj.drawString("1", 47, 80, Integer.parseInt("ffffff", 16));
         fontRendererObj.drawString("2", 71, 80, Integer.parseInt("ffffff", 16));
