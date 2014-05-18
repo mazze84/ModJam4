@@ -22,18 +22,21 @@ public class ModelCalendar extends ModelBase
         Shape1.setTextureSize(64, 32);
         Shape1.mirror = true;
         setRotation(Shape1, 0F, 0F, 0F);
+
         Shape2 = new ModelRenderer(this, 0, 10);
         Shape2.addBox(0F, 0F, 0F, 12, 10, 0);
         Shape2.setRotationPoint(-6F, 10F, 8F);
         Shape2.setTextureSize(64, 32);
         Shape2.mirror = true;
         setRotation(Shape2, 0F, 0F, 0F);
+
         Shape3 = new ModelRenderer(this, 0, 0);
         Shape3.addBox(0F, 0F, 0F, 10, 9, 1);
         Shape3.setRotationPoint(-5F, 10F, 6F);
         Shape3.setTextureSize(64, 32);
         Shape3.mirror = true;
         setRotation(Shape3, 0F, 0F, 0F);
+
         Shape4 = new ModelRenderer(this, 22, 4);
         Shape4.addBox(0F, 0F, 0F, 8, 1, 1);
         Shape4.setRotationPoint(-4F, 7F, 7F);
