@@ -3,9 +3,11 @@ package com.teampapayamar.solstice.client.gui.inventory;
 import com.teampapayamar.solstice.inventory.ContainerCalendar;
 import com.teampapayamar.solstice.reference.Textures;
 import com.teampapayamar.solstice.tileentity.TileEntityCalendar;
+import com.teampapayamar.solstice.util.TimeHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.util.StatCollector;
 import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)
@@ -24,7 +26,11 @@ public class GuiCalendar extends GuiContainer
     @Override
     protected void drawGuiContainerForegroundLayer(int x, int y)
     {
+        fontRendererObj.drawString(StatCollector.translateToLocal(TimeHelper.getMonthName(tileEntityCalendar.getWorldObj().getWorldTime())), 45, 64, 4210752);
 
+        fontRendererObj.drawString("1", 47, 80, Integer.parseInt("ffffff", 16));
+        fontRendererObj.drawString("2", 71, 80, Integer.parseInt("ffffff", 16));
+        fontRendererObj.drawString("3", 95, 80, Integer.parseInt("ffffff", 16));
     }
 
     @Override
