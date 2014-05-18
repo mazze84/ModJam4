@@ -53,22 +53,22 @@ public class BlockCalendar extends BlockSolstice implements ITileEntityProvider
             {
                 case SOUTH:
                 {
-                    this.setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.25f);
+                    this.setBlockBounds(0.1f, 0.1f, 0.0f, 0.9f, 0.9f, 0.15f);
                     break;
                 }
                 case NORTH:
                 {
-                    this.setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
+                    this.setBlockBounds(0.1f, 0.1f, 0.85f, 0.9f, 0.9f, 1.0f);
                     break;
                 }
                 case EAST:
                 {
-                    this.setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
+                    this.setBlockBounds(0.0f, 0.1f, 0.1f, 0.15f, 0.9f, 0.9f);
                     break;
                 }
                 case WEST:
                 {
-                    this.setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
+                    this.setBlockBounds(0.85f, 0.1f, 0.1f, 1.0f, 0.9f, 0.9f);
                     break;
                 }
                 default:

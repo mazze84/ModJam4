@@ -29,36 +29,39 @@ public class TileEntityCalendarRenderer extends TileEntitySpecialRenderer
                 orientation = tileEntityCalendar.getOrientation();
             }
 
-            float angle = 180f;
-
-            if (orientation != null)
-            {
-                if (orientation == ForgeDirection.SOUTH)
-                {
-                    angle = 180f;
-                }
-                else if (orientation == ForgeDirection.NORTH)
-                {
-                    angle = 0f;
-                }
-                else if (orientation == ForgeDirection.EAST)
-                {
-                    angle = 270f;
-                }
-                else if (orientation == ForgeDirection.WEST)
-                {
-                    angle = 90f;
-                }
-            }
-
             this.bindTexture(Textures.MODEL_CALENDAR);
 
+            GL11.glDisable(GL11.GL_CULL_FACE);
             GL11.glPushMatrix();
-                GL11.glTranslated(x + 0.49d, y + 1.35d, z + 0.5d);
-                GL11.glRotatef(angle, 0f, 1f, 0f);
+                renderTileEntityForOrientation(x, y, z, orientation);
                 GL11.glRotatef(180f, 0f, 0f, 1f);
                 modelCalendar.renderAll();
             GL11.glPopMatrix();
+            GL11.glEnable(GL11.GL_CULL_FACE);
+        }
+    }
+
+    private void renderTileEntityForOrientation(double x, double y, double z, ForgeDirection forgeDirection)
+    {
+        if (forgeDirection == ForgeDirection.SOUTH)
+        {
+            GL11.glTranslated(x + 0.5d, y + 1.35d, z + 0.51d);
+            GL11.glRotatef(180f, 0f, 1f, 0f);
+        }
+        else if (forgeDirection == ForgeDirection.NORTH)
+        {
+            GL11.glTranslated(x + 0.5d, y + 1.35d, z + 0.49d);
+            GL11.glRotatef(0f, 0f, 1f, 0f);
+        }
+        else if (forgeDirection == ForgeDirection.EAST)
+        {
+            GL11.glTranslated(x + 0.51d, y + 1.35d, z + 0.5d);
+            GL11.glRotatef(270f, 0f, 1f, 0f);
+        }
+        else if (forgeDirection == ForgeDirection.WEST)
+        {
+            GL11.glTranslated(x + 0.49d, y + 1.35d, z + 0.5d);
+            GL11.glRotatef(90f, 0f, 1f, 0f);
         }
     }
 }
