@@ -31,9 +31,12 @@ public class GuiCalendar extends GuiContainer
         int dayOfMonth = TimeHelper.getDayOfMonth(worldTime);
 
         // Draw Month name
-        fontRendererObj.drawString(monthName + " " + TimeHelper.getYear(worldTime) + " AC", 28, 68, 4210752);
+        fontRendererObj.drawString(TimeHelper.getYear(worldTime) + " AC", 28, 38, 4210752);
+        fontRendererObj.drawString(monthName, 28, 68, 4210752);
 
         int day = 0;
+
+        // TODO Bug: not showing the last day of the month
 
         for (int i = 0; i < 4; i++)
         {
@@ -55,8 +58,7 @@ public class GuiCalendar extends GuiContainer
                 {
                     GL11.glColor4f(1f, 1f, 1f, 1f);
                     this.mc.getTextureManager().bindTexture(Textures.GUI_CALENDAR_HIGHLIGHT);
-//                    this.drawTexturedModalRect(32 + (j * 27), 81 + (i * 26), 0, 0, 32, 32);
-                    this.drawTexturedModalRect(0, 0, 0, 0, 32, 32);
+                    this.drawTexturedModalRect(23 + (j * 27), 74 + (i * 26), 0, 0, 32, 32);
                 }
             }
         }
@@ -69,6 +71,6 @@ public class GuiCalendar extends GuiContainer
         this.mc.getTextureManager().bindTexture(Textures.GUI_CALENDAR);
         int xStart = (width - xSize) / 2;
         int yStart = (height - ySize) / 2;
-//        this.drawTexturedModalRect(xStart, yStart, 0, 0, xSize, ySize);
+        this.drawTexturedModalRect(xStart, yStart, 0, 0, xSize, ySize);
     }
 }
