@@ -1,7 +1,10 @@
 package com.teampapayamar.solstice.tileentity;
 
+import com.teampapayamar.solstice.network.PacketHandler;
+import com.teampapayamar.solstice.network.mesage.MessageTileEntityUpdate;
 import com.teampapayamar.solstice.reference.Names;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.Packet;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 
@@ -77,5 +80,11 @@ public class TileEntitySolstice extends TileEntity
         nbtTagCompound.setByte(Names.NBT.ORIENTATION, (byte) orientation.ordinal());
         nbtTagCompound.setByte(Names.NBT.STATE, state);
         nbtTagCompound.setString(Names.NBT.OWNER, owner);
+    }
+
+    @Override
+    public Packet getDescriptionPacket()
+    {
+        return PacketHandler.INSTANCE.getPacketFrom(new MessageTileEntityUpdate(this));
     }
 }
