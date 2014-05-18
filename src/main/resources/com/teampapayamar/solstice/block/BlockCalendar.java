@@ -6,6 +6,8 @@ import com.teampapayamar.solstice.tileentity.TileEntityCalendar;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
 public class BlockCalendar extends BlockSolstice implements ITileEntityProvider
@@ -38,5 +40,44 @@ public class BlockCalendar extends BlockSolstice implements ITileEntityProvider
     public int getRenderType()
     {
         return RenderIds.calendar;
+    }
+
+    @Override
+    public MovingObjectPosition collisionRayTrace(World world, int x, int y, int z, Vec3 startVector, Vec3 endVector)
+    {
+        if (world.getTileEntity(x, y, z) instanceof TileEntityCalendar)
+        {
+            TileEntityCalendar tileEntityCalendar = (TileEntityCalendar) world.getTileEntity(x, y, z);
+
+            switch(tileEntityCalendar.getOrientation())
+            {
+                case SOUTH:
+                {
+                    this.setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.25f);
+                    break;
+                }
+                case NORTH:
+                {
+                    this.setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
+                    break;
+                }
+                case EAST:
+                {
+                    this.setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
+                    break;
+                }
+                case WEST:
+                {
+                    this.setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
+                    break;
+                }
+                default:
+                {
+                    break;
+                }
+            }
+        }
+
+        return super.collisionRayTrace(world, x, y, z, startVector, endVector);
     }
 }

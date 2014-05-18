@@ -29,41 +29,36 @@ public class TileEntityCalendarRenderer extends TileEntitySpecialRenderer
                 orientation = tileEntityCalendar.getOrientation();
             }
 
+            float angle = 180f;
+
+            if (orientation != null)
+            {
+                if (orientation == ForgeDirection.SOUTH)
+                {
+                    angle = 180f;
+                }
+                else if (orientation == ForgeDirection.NORTH)
+                {
+                    angle = 0f;
+                }
+                else if (orientation == ForgeDirection.EAST)
+                {
+                    angle = 270f;
+                }
+                else if (orientation == ForgeDirection.WEST)
+                {
+                    angle = 90f;
+                }
+            }
+
             this.bindTexture(Textures.MODEL_CALENDAR);
 
             GL11.glPushMatrix();
                 GL11.glTranslated(x + 0.49d, y + 1.35d, z + 0.5d);
-                GL11.glRotatef(180f, 0f, 1f, 0f);
+                GL11.glRotatef(angle, 0f, 1f, 0f);
                 GL11.glRotatef(180f, 0f, 0f, 1f);
                 modelCalendar.renderAll();
             GL11.glPopMatrix();
         }
     }
-
-//    private void renderCalendarByOrientation(double x, double y, double z, ForgeDirection orientation)
-//    {
-//        switch (orientation)
-//        {
-//            case SOUTH:
-//            {
-//
-//            }
-//            case NORTH:
-//            {
-//
-//            }
-//            case EAST:
-//            {
-//
-//            }
-//            case WEST:
-//            {
-//
-//            }
-//            default:
-//            {
-//
-//            }
-//        }
-//    }
 }
