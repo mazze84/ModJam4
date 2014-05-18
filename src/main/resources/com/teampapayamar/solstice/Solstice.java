@@ -4,6 +4,7 @@ import com.teampapayamar.solstice.configuration.ConfigurationHandler;
 import com.teampapayamar.solstice.handler.GuiHandler;
 import com.teampapayamar.solstice.init.ModBlocks;
 import com.teampapayamar.solstice.init.ModItems;
+import com.teampapayamar.solstice.item.crafting.Recipes;
 import com.teampapayamar.solstice.network.PacketHandler;
 import com.teampapayamar.solstice.proxy.IProxy;
 import com.teampapayamar.solstice.reference.Reference;
@@ -45,6 +46,8 @@ public class Solstice
         proxy.registerTileEntities();
 
         proxy.initRenderingAndTextures();
+
+        Recipes.initRecipes();
     }
 
     @Mod.EventHandler
