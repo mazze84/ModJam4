@@ -31,9 +31,9 @@ public class ModelCalendar extends ModelBase
 
     public void renderAll()
     {
-        this.shape1.render(0.0625F);
-        this.shape2.render(0.0625F);
-        this.shape3.render(0.0625F);
-        this.shape4.render(0.0625F);
+        this.shape1.render(0.0625f);
+        this.shape2.render(0.0625f);
+        this.shape3.render(0.0625f);
+        this.shape4.render(0.0625f);
     }
 }

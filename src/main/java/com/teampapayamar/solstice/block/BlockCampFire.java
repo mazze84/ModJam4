@@ -14,6 +14,7 @@ public class BlockCampFire extends BlockSolstice implements ITileEntityProvider
     {
         super(Material.wood);
         this.setBlockName(Names.Block.CAMP_FIRE);
+        this.setHardness(0.5f);
     }
 
     @Override
