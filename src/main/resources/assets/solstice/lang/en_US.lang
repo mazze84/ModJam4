@@ -28,8 +28,8 @@ day.solstice:six=Friday
 day.solstice:seven=Saturday
 
 # Block localizations
-tile.solstice:calendar=Calendar
-tile.solstice:campfire=Camp Fire
+tile.solstice:calendar.name=Calendar
+tile.solstice:campfire.name=Camp Fire
 
 # Item localizations
 item.solstice:swimsuit_helm.name=Swim Suit Cap
@@ -66,3 +66,6 @@ item.solstice:modgoldchain_helm.name=Gold Chain Helmet
 item.solstice:modgoldchain_chest.name=Gold Chain Chestplate
 item.solstice:modgoldchain_legs.name=Gold Chain Leggings
 item.solstice:modgoldchain_boots.name=Gold Chain Boots
+
+# GUI localizations
+container.solstice:calendar=Calendar

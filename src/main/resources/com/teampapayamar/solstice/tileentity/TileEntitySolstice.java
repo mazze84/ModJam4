@@ -1,8 +1,8 @@
 package com.teampapayamar.solstice.tileentity;
 
+import com.teampapayamar.solstice.reference.Names;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.ForgeDirection;
 
 public class TileEntitySolstice extends TileEntity
@@ -15,6 +15,7 @@ public class TileEntitySolstice extends TileEntity
     {
         orientation = ForgeDirection.SOUTH;
         state = 0;
+        owner = "";
     }
 
     public ForgeDirection getOrientation()
@@ -37,19 +38,34 @@ public class TileEntitySolstice extends TileEntity
         this.state = state;
     }
 
+    public String getOwner()
+    {
+        return owner;
+    }
+
+    public void setOwner(String owner)
+    {
+        this.owner = owner;
+    }
+
     @Override
     public void readFromNBT(NBTTagCompound nbtTagCompound)
     {
         super.readFromNBT(nbtTagCompound);
 
-        if (nbtTagCompound.hasKey("orientation"))
+        if (nbtTagCompound.hasKey(Names.NBT.ORIENTATION))
         {
-            this.orientation = ForgeDirection.getOrientation(nbtTagCompound.getByte("orientation"));
+            this.orientation = ForgeDirection.getOrientation(nbtTagCompound.getByte(Names.NBT.ORIENTATION));
         }
 
-        if (nbtTagCompound.hasKey("state"))
+        if (nbtTagCompound.hasKey(Names.NBT.STATE))
         {
-            this.state = nbtTagCompound.getByte("state");
+            this.state = nbtTagCompound.getByte(Names.NBT.STATE);
+        }
+
+        if (nbtTagCompound.hasKey(Names.NBT.OWNER))
+        {
+            this.owner = nbtTagCompound.getString(Names.NBT.OWNER);
         }
     }
 
@@ -58,7 +74,8 @@ public class TileEntitySolstice extends TileEntity
     {
         super.writeToNBT(nbtTagCompound);
 
-        nbtTagCompound.setByte("orientation", (byte) orientation.ordinal());
-        nbtTagCompound.setByte("state", state);
+        nbtTagCompound.setByte(Names.NBT.ORIENTATION, (byte) orientation.ordinal());
+        nbtTagCompound.setByte(Names.NBT.STATE, state);
+        nbtTagCompound.setString(Names.NBT.OWNER, owner);
     }
 }

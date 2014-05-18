@@ -52,4 +52,11 @@ public class Names
         public static final String CHAIN_GOLD_LEGS = "modgoldchain_legs";
         public static final String CHAIN_GOLD_BOOTS = "modgoldchain_boots";
     }
+
+    public static class NBT
+    {
+        public static final String ORIENTATION = "orientation";
+        public static final String STATE = "state";
+        public static final String OWNER = "owner";
+    }
 }

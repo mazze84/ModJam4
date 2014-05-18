@@ -4,11 +4,6 @@ import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class TileEntityCampFire extends TileEntitySolstice implements ITileEntityProvider
+public class TileEntityCampFire extends TileEntitySolstice
 {
-    @Override
-    public TileEntity createNewTileEntity(World world, int meta)
-    {
-        return null;
-    }
 }
