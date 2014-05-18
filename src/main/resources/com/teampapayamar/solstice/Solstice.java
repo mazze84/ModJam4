@@ -37,6 +37,10 @@ public class Solstice
     public void init(FMLInitializationEvent event)
     {
         proxy.registerEventHandlers();
+
+        proxy.registerTileEntities();
+
+        proxy.initRenderingAndTextures();
     }
 
     @Mod.EventHandler
