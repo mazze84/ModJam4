@@ -1,6 +1,7 @@
 package com.teampapayamar.solstice.client.renderer.tileentity;
 
 import com.teampapayamar.solstice.client.renderer.model.ModelCalendar;
+import com.teampapayamar.solstice.reference.Textures;
 import com.teampapayamar.solstice.tileentity.TileEntityCalendar;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -26,6 +27,10 @@ public class TileEntityCalendarRenderer extends TileEntitySpecialRenderer
             {
                 orientation = tileEntityCalendar.getOrientation();
             }
+
+            this.bindTexture(Textures.MODEL_CALENDAR);
+
+            modelCalendar.renderAll();
         }
     }
 }

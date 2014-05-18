@@ -66,4 +66,12 @@ public class ModelCalendar extends ModelBase
     {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
     }
+
+    public void renderAll()
+    {
+        Shape1.render(1f);
+        Shape2.render(1f);
+        Shape3.render(1f);
+        Shape4.render(1f);
+    }
 }
