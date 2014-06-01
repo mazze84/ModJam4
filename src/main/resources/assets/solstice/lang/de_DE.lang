@@ -1,0 +1,71 @@
+#Seasons
+season.solstice:winter=Winter
+season.solstice:spring=Frühling
+season.solstice:summer=Sommer
+season.solstice:autumn=Herbst
+
+# Months
+month.solstice:one=Grumuar
+month.solstice:two=Jebruar
+month.solstice:three=Notch
+month.solstice:four=Anvil
+month.solstice:five=Hay
+month.solstice:six=Bone
+month.solstice:seven=Julapis
+month.solstice:eight=Mogust
+month.solstice:nine=Seargetember
+month.solstice:ten=Blocktober
+month.solstice:eleven=Blazember
+month.solstice:twelve=Decrafter
+
+# Days
+day.solstice:one=Sonntag
+day.solstice:two=Montag
+day.solstice:three=Dienstag
+day.solstice:four=Mittwoch
+day.solstice:five=Donnerstag
+day.solstice:six=Freitag
+day.solstice:seven=Samstag
+
+# Block localizations
+tile.solstice:calendar.name=Kalendar
+tile.solstice:campfire.name=Lagerfeuer
+
+# Item localizations
+item.solstice:swimsuit_helm.name=Badekappe
+item.solstice:swimsuit_chest.name=Badeanzug
+item.solstice:swimsuit_legs.name=Badehose
+item.solstice:swimsuit_boots.name=Badesandalen
+
+item.solstice:woolarmor_helm.name=Wollhut
+item.solstice:woolarmor_chest.name=Wollpulover
+item.solstice:woolarmor_legs.name=Wollhose
+item.solstice:woolarmor_boots.name=Wollstiefel
+
+item.solstice:wooliron_helm.name=Woll gefütterter Eisenhelm
+item.solstice:wooliron_chest.name=Woll gefütterter Eisenbrustpanzer
+item.solstice:wooliron_legs.name=Woll gefütterte Eisenhose
+item.solstice:wooliron_boots.name=Woll gefütterte Eisenstiefel
+
+item.solstice:woolgold_helm.name=Woll gefütterter Goldhelm
+item.solstice:woolgold_chest.name=Woll gefütterter Goldbrustpanzer
+item.solstice:woolgold_legs.names=Woll gefütterte Goldhose
+item.solstice:woolgold_boots.name=Woll gefütterte Goldstiefel
+
+item.solstice:wooldiamond_helm.name=Woll gefütterter Diamanthelm
+item.solstice:wooldiamond_chest.name=Woll gefütterter Diamantbrustpanzer
+item.solstice:wooldiamond_legs.name=Woll gefütterte Diamanthose
+item.solstice:wooldiamond_boots.name=Woll gefütterte Diamantstiefel
+
+item.solstice:modironchain_helm.name=Eisen Kettenhaube
+item.solstice:modironchain_chest.name=Eisen Kettenhemd
+item.solstice:modironchain_legs.name=Eisen Kettenhose
+item.solstice:modironchain_boots.name=Eisen Kettenstiefel
+
+item.solstice:modgoldchain_helm.name=Gold Kettenhaube
+item.solstice:modgoldchain_chest.name=Gold Kettenhemd
+item.solstice:modgoldchain_legs.name=Gold Kettenhose
+item.solstice:modgoldchain_boots.name=Gold Kettenstiefel
+
+# GUI localizations
+container.solstice:calendar=Kalendar
