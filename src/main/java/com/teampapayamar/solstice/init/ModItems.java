@@ -3,6 +3,7 @@ package com.teampapayamar.solstice.init;
 import com.teampapayamar.solstice.item.*;
 import com.teampapayamar.solstice.reference.Names;
 import com.teampapayamar.solstice.util.ArmorType;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModItems
@@ -41,6 +42,8 @@ public class ModItems
     public static final ItemArmorSolstice chainGoldChest = new ItemArmorChainGold(ArmorType.CHEST);
     public static final ItemArmorSolstice chainGoldLegs = new ItemArmorChainGold(ArmorType.LEGS);
     public static final ItemArmorSolstice chainGoldBoots = new ItemArmorChainGold(ArmorType.BOOTS);
+    
+    public static final ItemSolstice thermometer = new ItemThermometer(Names.Item.THERMOMETER);
 
     public static void init()
     {
@@ -78,5 +81,7 @@ public class ModItems
         GameRegistry.registerItem(chainGoldChest, "item." + Names.Armor.CHAIN_GOLD_CHEST);
         GameRegistry.registerItem(chainGoldLegs, "item." + Names.Armor.CHAIN_GOLD_LEGS);
         GameRegistry.registerItem(chainGoldBoots, "item." + Names.Armor.CHAIN_GOLD_BOOTS);
+        
+        GameRegistry.registerItem(thermometer, "item." + Names.Item.THERMOMETER);
     }
 }

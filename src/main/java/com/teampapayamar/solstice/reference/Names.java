@@ -52,6 +52,10 @@ public class Names
         public static final String CHAIN_GOLD_LEGS = "modgoldchain_legs";
         public static final String CHAIN_GOLD_BOOTS = "modgoldchain_boots";
     }
+    
+    public static class Item {
+    	public static final String THERMOMETER = "modthermometer";
+    }
 
     public static class NBT
     {
