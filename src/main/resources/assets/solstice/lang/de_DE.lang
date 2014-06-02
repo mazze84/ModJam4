@@ -28,7 +28,7 @@ day.solstice:six=Freitag
 day.solstice:seven=Samstag
 
 # Block localizations
-tile.solstice:calendar.name=Kalendar
+tile.solstice:calendar.name=Kalender
 tile.solstice:campfire.name=Lagerfeuer
 
 # Item localizations
@@ -38,7 +38,7 @@ item.solstice:swimsuit_legs.name=Badehose
 item.solstice:swimsuit_boots.name=Badesandalen
 
 item.solstice:woolarmor_helm.name=Wollhut
-item.solstice:woolarmor_chest.name=Wollpulover
+item.solstice:woolarmor_chest.name=Wollpullover
 item.solstice:woolarmor_legs.name=Wollhose
 item.solstice:woolarmor_boots.name=Wollstiefel
 
@@ -68,4 +68,4 @@ item.solstice:modgoldchain_legs.name=Gold Kettenhose
 item.solstice:modgoldchain_boots.name=Gold Kettenstiefel
 
 # GUI localizations
-container.solstice:calendar=Kalendar
+container.solstice:calendar=Kalender
