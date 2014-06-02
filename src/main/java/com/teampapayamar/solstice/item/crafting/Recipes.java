@@ -31,11 +31,30 @@ public class Recipes
         GameRegistry.addRecipe(new ShapedOreRecipe(ModItems.woolIronLegs, new Object[] {"www","wlw", "w w", 'w', new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE), 'l', Items.iron_leggings}));
         GameRegistry.addRecipe(new ShapedOreRecipe(ModItems.woolIronBoots, new Object[] {"w w","wbw", 'w', new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE), 'b', Items.iron_boots}));
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(ModItems.swimSuitHelm, new Object[]{"www", "w w", 'w', new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE)}));
-        GameRegistry.addRecipe(new ShapedOreRecipe(ModItems.swimSuitChest, new Object[]{"w w", "www", "www", 'w', new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE)}));
-        GameRegistry.addRecipe(new ShapedOreRecipe(ModItems.swimSuitLegs, new Object[]{"www", "w w", "w w", 'w', new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE)}));
-        GameRegistry.addRecipe(new ShapedOreRecipe(ModItems.swimSuitBoots, new Object[]{"w w", "w w", 'w', new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE)}));
+        GameRegistry.addRecipe(new ShapedOreRecipe(ModItems.woolArmorHelm, new Object[]{"www", "w w", 'w', new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE)}));
+        GameRegistry.addRecipe(new ShapedOreRecipe(ModItems.woolArmorChest, new Object[]{"w w", "www", "www", 'w', new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE)}));
+        GameRegistry.addRecipe(new ShapedOreRecipe(ModItems.woolArmorLegs, new Object[]{"www", "w w", "w w", 'w', new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE)}));
+        GameRegistry.addRecipe(new ShapedOreRecipe(ModItems.woolArmorBoots, new Object[]{"w w", "w w", 'w', new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE)}));
         
-//        GameRegistry.addRecipe(new ShapedOreRecipe(ModItems., recipe));
-    }
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.woolGoldHelm), new Object[] { Items.golden_helmet, ModItems.woolArmorHelm });
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.woolGoldChest), new Object[] { Items.golden_chestplate, ModItems.woolArmorChest });
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.woolGoldLegs), new Object[] { Items.golden_leggings, ModItems.woolArmorLegs });
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.woolGoldBoots), new Object[] { Items.golden_boots, ModItems.woolArmorBoots });
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.woolIronHelm), new Object[] { Items.iron_helmet, ModItems.woolArmorHelm });
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.woolIronChest), new Object[] { Items.iron_chestplate, ModItems.woolArmorChest });
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.woolIronLegs), new Object[] { Items.iron_leggings, ModItems.woolArmorLegs });
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.woolIronBoots), new Object[] { Items.iron_boots, ModItems.woolArmorBoots });
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.woolDiamondHelm), new Object[] { Items.diamond_helmet, ModItems.woolArmorHelm });
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.woolDiamondChest), new Object[] { Items.diamond_chestplate, ModItems.woolArmorChest });
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.woolDiamondLegs), new Object[] { Items.diamond_leggings, ModItems.woolArmorLegs });
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.woolDiamondBoots), new Object[] { Items.diamond_boots, ModItems.woolArmorBoots });
+        
+        GameRegistry.addRecipe(new ShapedOreRecipe(ModItems.swimSuitHelm, new Object[]{"www", "w w", 'w', Items.string}));
+        GameRegistry.addRecipe(new ShapedOreRecipe(ModItems.swimSuitChest, new Object[]{"w w", "www", "www", 'w', Items.string}));
+        GameRegistry.addRecipe(new ShapedOreRecipe(ModItems.swimSuitLegs, new Object[]{"www", "w w", "w w", 'w', Items.string}));
+        GameRegistry.addRecipe(new ShapedOreRecipe(ModItems.swimSuitBoots, new Object[]{"w w", "w w", 'w', Items.string}));
+        
+            }
 }
