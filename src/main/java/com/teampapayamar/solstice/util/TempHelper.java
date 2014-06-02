@@ -80,7 +80,7 @@ public class TempHelper {
 		return temperature;
 	}
 	
-	public static int CtoF(int temp) {
+	public static int CelciustoFahrenheit(int temp) {
 		return (int)(temp * 1.8 + 32);
 	}
 	
@@ -89,9 +89,16 @@ public class TempHelper {
 	 * TODO: Generate formula to factor in armor type. Body temperature gets higher with wool armor and lower with chain mail.
 	 * Body temperature can't be higher than 41 °C and lower than 35 °C.
 	 */
-	public static int playerTemp(EntityPlayer player, World world) {
+	public static int getPlayerTemp(EntityPlayer player, World world) {
+		int worldTemp = getTemp(world);
+		int playerTemp = 37;
+		if (worldTemp > 15) {
+			playerTemp += 1;
+		} else {
+			playerTemp -= 1;
+		}
 		
-		return 37 * getTemp(world);
+		return playerTemp;
 	}
 
 }

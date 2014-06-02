@@ -57,10 +57,8 @@ public class ItemThermometer extends ItemSolstice {
 		if(player.isSneaking()) {
 			// read own temperature
 			// TODO: Localize String and temperature unit
-			// TODO: Generate formula to factor in armor type. Body temperature gets higher with wool armor and lower with chain mail.
-			// Body temperature can't be higher than 41 °C and lower than 35 °C.
-			temperature = 37 + temperature / 100;
-			player.addChatComponentMessage(new ChatComponentText(String.format("My temperature is %s °C", temperature)));
+			
+			player.addChatComponentMessage(new ChatComponentText(String.format("My temperature is %s °C", TempHelper.getPlayerTemp(player, world))));
 		} else {	
 			// read temp of the environment
 			// TODO: Localize String and temperature unit
