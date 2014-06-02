@@ -54,7 +54,7 @@ public class Names
     }
     
     public static class Item {
-    	public static final String THERMOMETER = "modthermometer";
+    	public static final String THERMOMETER = "thermometer";
     }
 
     public static class NBT

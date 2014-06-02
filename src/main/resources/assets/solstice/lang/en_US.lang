@@ -67,7 +67,7 @@ item.solstice:modgoldchain_chest.name=Gold Chain Chestplate
 item.solstice:modgoldchain_legs.name=Gold Chain Leggings
 item.solstice:modgoldchain_boots.name=Gold Chain Boots
 
-item.solstice:modthermometer.name=Thermometer
+item.solstice:thermometer.name=Thermometer
 
 # GUI localizations
 container.solstice:calendar=Calendar
