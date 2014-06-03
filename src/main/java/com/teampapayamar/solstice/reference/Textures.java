@@ -32,6 +32,12 @@ public class Textures
     
     public static final String THERMOMETER = ITEM_RESOURCE_LOCATION + "thermometer.png";
     
+    
+    /**
+     * Block texture location
+     */
+    public static final String BLOCK_RESOURCE_LOCATION = RESOURCE_PREFIX + "textures/blocks/";
+    
     /**
      * Gui texture locations
      */
