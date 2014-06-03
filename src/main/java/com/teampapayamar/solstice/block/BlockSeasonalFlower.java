@@ -9,7 +9,6 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
 import com.teampapayamar.solstice.creativetab.CreativeTabSolstice;
-import com.teampapayamar.solstice.reference.Names;
 import com.teampapayamar.solstice.reference.Textures;
 import com.teampapayamar.solstice.util.NameHelper;
 import com.teampapayamar.solstice.util.TimeHelper;
@@ -28,21 +27,17 @@ public class BlockSeasonalFlower extends BlockBush{
 		this.setCreativeTab(CreativeTabSolstice.SOLSTICE_TAB);
 		this.setBlockName(name);
 	}
-		
-	@Override
-    public String getUnlocalizedName(){
-        return String.format("tile.%s%s", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
-    }
-	
-	
+			
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister){
 		
         String name = NameHelper.getUnwrappedUnlocalizedName(getUnlocalizedName());
 		blockIcon = iconRegister.registerIcon(name);
         
-        wiltedIcon = iconRegister.registerIcon(String.format("%s%s_wilted", Textures.BLOCK_RESOURCE_LOCATION, name));
-        budIcon = iconRegister.registerIcon(String.format("%s%s_bud", Textures.BLOCK_RESOURCE_LOCATION, name));
+        wiltedIcon = iconRegister.registerIcon(String.format("%s%s_wilted.png", Textures.BLOCK_RESOURCE_LOCATION, name));
+        System.out.println(name);
+        System.out.println(String.format("%s%s_wilted.png", Textures.BLOCK_RESOURCE_LOCATION, name));
+        budIcon = iconRegister.registerIcon(String.format("%s%s_bud.png", Textures.BLOCK_RESOURCE_LOCATION, name));
                 
     }
 	
