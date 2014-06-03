@@ -30,13 +30,13 @@ public class ModBlocks
         GameRegistry.registerBlock(campFire, "tile." + Names.Block.CAMP_FIRE);
         
         GameRegistry.registerBlock(rose, "tile." + Names.Block.ROSE);
-        GameRegistry.registerBlock(blue_orchid, "tile." + Names.Block.ROSE);
-        GameRegistry.registerBlock(allium, "tile." + Names.Block.ROSE);
-        GameRegistry.registerBlock(houstonia, "tile." + Names.Block.ROSE);
-        GameRegistry.registerBlock(tulip_red, "tile." + Names.Block.ROSE);
-        GameRegistry.registerBlock(tulip_orange, "tile." + Names.Block.ROSE);
-        GameRegistry.registerBlock(tulip_white, "tile." + Names.Block.ROSE);
-        GameRegistry.registerBlock(tulip_pink, "tile." + Names.Block.ROSE);
-        GameRegistry.registerBlock(oxeye_daisy, "tile." + Names.Block.ROSE);
+        GameRegistry.registerBlock(blue_orchid, "tile." + Names.Block.BLUE_ORCHID);
+        GameRegistry.registerBlock(allium, "tile." + Names.Block.ALLIUM);
+        GameRegistry.registerBlock(houstonia, "tile." + Names.Block.HOUSTONIA);
+        GameRegistry.registerBlock(tulip_red, "tile." + Names.Block.TULIP_RED);
+        GameRegistry.registerBlock(tulip_orange, "tile." + Names.Block.TULIP_ORANGE);
+        GameRegistry.registerBlock(tulip_white, "tile." + Names.Block.TULIP_WHITE);
+        GameRegistry.registerBlock(tulip_pink, "tile." + Names.Block.TULIP_PINK);
+        GameRegistry.registerBlock(oxeye_daisy, "tile." + Names.Block.OXEYE_DAISY);
     }
 }
