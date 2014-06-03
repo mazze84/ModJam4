@@ -6,6 +6,8 @@ public class Names
     {
         public static final String CALENDAR = "calendar";
         public static final String CAMP_FIRE = "campfire";
+        
+        public static final String FLOWER = "flower";
     }
 
     public static class Armor
