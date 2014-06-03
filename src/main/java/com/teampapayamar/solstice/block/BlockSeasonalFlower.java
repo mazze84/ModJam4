@@ -9,6 +9,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
 import com.teampapayamar.solstice.creativetab.CreativeTabSolstice;
+import com.teampapayamar.solstice.reference.Names;
 import com.teampapayamar.solstice.reference.Textures;
 import com.teampapayamar.solstice.util.NameHelper;
 import com.teampapayamar.solstice.util.TimeHelper;
@@ -22,12 +23,12 @@ public class BlockSeasonalFlower extends BlockBush{
 	private IIcon budIcon;
 	
 	
-	public BlockSeasonalFlower() {
+	public BlockSeasonalFlower(String name) {
 		super(Material.plants);
 		this.setCreativeTab(CreativeTabSolstice.SOLSTICE_TAB);
-		
+		this.setBlockName(name);
 	}
-	
+		
 	@Override
     public String getUnlocalizedName(){
         return String.format("tile.%s%s", Textures.RESOURCE_PREFIX, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName()));

@@ -7,7 +7,17 @@ public class Names
         public static final String CALENDAR = "calendar";
         public static final String CAMP_FIRE = "campfire";
         
-        public static final String FLOWER = "flower";
+        public static final String ROSE = "flower_rose";
+        public static final String BLUE_ORCHID = "flower_blue_orchid";
+        public static final String ALLIUM = "flower_allium";
+        public static final String HOUSTONIA = "flower_houstonia";
+        public static final String TULIP_RED = "flower_tulip_red";
+        public static final String TULIP_ORANGE = "flower_tulip_orange";
+        public static final String TULIP_WHITE = "flower_tulip_white";
+        public static final String TULIP_PINK = "flower_tulip_pink";
+        public static final String OXEYE_DAISY = "flower_oxeye_daisy";
+        
+   
     }
 
     public static class Armor
