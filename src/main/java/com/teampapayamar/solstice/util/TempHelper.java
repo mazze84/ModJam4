@@ -23,7 +23,7 @@ public class TempHelper {
 			return 0;
 		}
 		
-		int month = TimeHelper.getMonth(world.getTotalWorldTime());
+		int month = TimeHelper.getMonth(world.getWorldTime());
 		int temperature = 0;
 		if (month == 0) {
 			temperature = 3;
