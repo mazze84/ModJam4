@@ -78,6 +78,7 @@ public class ItemThermometer extends ItemSolstice {
 			EntityPlayer playerClicked = (EntityPlayer)entity;
 		
 			int temp = TempHelper.getTemp(playerClicked.getEntityWorld());
+			// TODO: localize String
 			player.addChatComponentMessage(new ChatComponentText(String.format("%s's temperature is %s °C",playerClicked.getDisplayName(), temp )));
 		
 			return true;

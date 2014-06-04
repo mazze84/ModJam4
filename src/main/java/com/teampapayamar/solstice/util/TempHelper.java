@@ -2,6 +2,7 @@ package com.teampapayamar.solstice.util;
 
 import org.apache.logging.log4j.Level;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
@@ -76,11 +77,13 @@ public class TempHelper {
 		} else {
 			temperature -= 1/brightness - 1;
 		}
-				
+		if(Minecraft.getMinecraft().getLanguageManager().getCurrentLanguage().getLanguageCode().equals("en_US")) {
+			return celciusToFahrenheit(temperature);
+		}
 		return temperature;
 	}
 	
-	public static int CelciustoFahrenheit(int temp) {
+	public static int celciusToFahrenheit(int temp) {
 		return (int)(temp * 1.8 + 32);
 	}
 	
