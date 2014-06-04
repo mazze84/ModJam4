@@ -18,7 +18,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 
 public class BlockSeasonalFlower extends BlockBush{
+	@SideOnly(Side.CLIENT)
 	private IIcon wiltedIcon;
+	@SideOnly(Side.CLIENT)
 	private IIcon budIcon;
 	
 	
@@ -27,19 +29,21 @@ public class BlockSeasonalFlower extends BlockBush{
 		this.setCreativeTab(CreativeTabSolstice.SOLSTICE_TAB);
 		this.setBlockName(name);
 	}
-			
+	
+	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister){
 		
         String name = NameHelper.getUnwrappedUnlocalizedName(getUnlocalizedName());
 		blockIcon = iconRegister.registerIcon(name);
         
-        wiltedIcon = iconRegister.registerIcon(String.format("%s%s_wilted.png", Textures.RESOURCE_PREFIX, name));
+        wiltedIcon = iconRegister.registerIcon(String.format("%s%s_wilted", Textures.RESOURCE_PREFIX, name));
         
         budIcon = iconRegister.registerIcon(String.format("%s%s_bud", Textures.RESOURCE_PREFIX, name));
                 
     }
 	
+	@Override
 	@SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int meta)
     {
