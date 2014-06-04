@@ -25,18 +25,7 @@ public class Textures
     public static final String CHAIN_GOLD_ARMOR_LAYER1 = ARMOR_RESOURCE_LOCATION + "modgoldchainarmor_layer1.png";
     public static final String CHAIN_GOLD_ARMOR_LAYER2 = ARMOR_RESOURCE_LOCATION + "modgoldchainarmor_layer2.png";
 
-    /**
-     * Item texture locations 
-     */
-    public static final String ITEM_RESOURCE_LOCATION = RESOURCE_PREFIX + "textures/items/";
-    
-    public static final String THERMOMETER = ITEM_RESOURCE_LOCATION + "thermometer.png";
-    
-    
-    /**
-     * Block texture location
-     */
-    public static final String BLOCK_RESOURCE_LOCATION = RESOURCE_PREFIX + "textures/blocks/";
+        
     
     /**
      * Gui texture locations

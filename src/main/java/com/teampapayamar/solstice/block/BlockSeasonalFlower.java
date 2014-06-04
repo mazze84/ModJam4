@@ -34,10 +34,9 @@ public class BlockSeasonalFlower extends BlockBush{
         String name = NameHelper.getUnwrappedUnlocalizedName(getUnlocalizedName());
 		blockIcon = iconRegister.registerIcon(name);
         
-        wiltedIcon = iconRegister.registerIcon(String.format("%s%s_wilted.png", Textures.BLOCK_RESOURCE_LOCATION, name));
-        System.out.println(name);
-        System.out.println(String.format("%s%s_wilted.png", Textures.BLOCK_RESOURCE_LOCATION, name));
-        budIcon = iconRegister.registerIcon(String.format("%s%s_bud.png", Textures.BLOCK_RESOURCE_LOCATION, name));
+        wiltedIcon = iconRegister.registerIcon(String.format("%s%s_wilted.png", Textures.RESOURCE_PREFIX, name));
+        
+        budIcon = iconRegister.registerIcon(String.format("%s%s_bud", Textures.RESOURCE_PREFIX, name));
                 
     }
 	
@@ -78,9 +77,10 @@ public class BlockSeasonalFlower extends BlockBush{
 		world.setBlockMetadataWithNotify(x, y, z, meta, 2);
 	}
 	
+	// always return the normal flower
 	@Override
 	public int damageDropped(int meta) {
-        return 1;
+        return 0;
     }
 	
 	
