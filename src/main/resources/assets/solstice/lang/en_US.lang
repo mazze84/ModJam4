@@ -71,3 +71,7 @@ item.solstice:thermometer.name=Thermometer
 
 # GUI localizations
 container.solstice:calendar=Calendar
+
+temperature.solstice:world_temp=Current temperature is %s °F
+temperature.solstice:other_player_temp=%s's temperature is %s °F
+temperature.solstice:player_temp=My temperature is %s °F

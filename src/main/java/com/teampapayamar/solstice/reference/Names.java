@@ -6,6 +6,10 @@ public class Names
     {
         public static final String CALENDAR = "calendar";
         public static final String CAMP_FIRE = "campfire";
+        
+        public static final String WORLD_TEMP = "world_temp";
+        public static final String PLAYER_TEMP = "player_temp";
+        public static final String OTHER_PLAYER_TEMP = "other_player_temp";
     }
 
     public static class Armor

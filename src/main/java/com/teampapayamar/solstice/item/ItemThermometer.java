@@ -57,11 +57,11 @@ public class ItemThermometer extends ItemSolstice {
 		if(player.isSneaking()) {
 			// read own temperature
 			// TODO: Localize String and temperature unit
-			player.addChatComponentMessage(new ChatComponentText(String.format("My temperature is %s °C", TempHelper.getPlayerTemp(player, world))));
+			player.addChatComponentMessage(new ChatComponentText(String.format("My temperature is %s °F", TempHelper.getPlayerTemp(player, world))));
 		} else {	
 			// read temp of the environment
 			// TODO: Localize String and temperature unit
-			player.addChatComponentMessage(new ChatComponentText(String.format("Current temperature is %s °C", temperature)));
+			player.addChatComponentMessage(new ChatComponentText(String.format("Current temperature is %s °F", temperature)));
 		}
 		
 		return stack;
@@ -79,7 +79,7 @@ public class ItemThermometer extends ItemSolstice {
 		
 			int temp = TempHelper.getTemp(playerClicked.getEntityWorld());
 			// TODO: localize String
-			player.addChatComponentMessage(new ChatComponentText(String.format("%s's temperature is %s °C",playerClicked.getDisplayName(), temp )));
+			player.addChatComponentMessage(new ChatComponentText(String.format("%s's temperature is %s °F",playerClicked.getDisplayName(), temp )));
 		
 			return true;
 		}
