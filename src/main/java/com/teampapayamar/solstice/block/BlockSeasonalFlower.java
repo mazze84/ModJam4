@@ -28,6 +28,8 @@ public class BlockSeasonalFlower extends BlockBush{
 		super(Material.plants);
 		this.setCreativeTab(CreativeTabSolstice.SOLSTICE_TAB);
 		this.setBlockName(name);
+		this.setHardness(0.0F);
+        this.setStepSound(soundTypeGrass);
 	}
 	
 	@Override

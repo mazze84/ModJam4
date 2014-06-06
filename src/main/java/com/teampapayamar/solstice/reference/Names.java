@@ -17,7 +17,13 @@ public class Names
         public static final String TULIP_PINK = "flower_tulip_pink";
         public static final String OXEYE_DAISY = "flower_oxeye_daisy";
         
-   
+        public static final String ROSE_BUSH = "rose";
+        public static final String SUNFLOWER = "sunflower";
+        public static final String SYRINGA = "syringa";
+        public static final String GRASS = "grass";
+        public static final String FERN = "fern";
+        public static final String PAEONIA = "paeonia";
+        
     }
 
     public static class Armor
